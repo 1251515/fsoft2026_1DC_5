@@ -13,14 +13,13 @@ namespace loja {
             float preco;
 
         public:
-
-            produto(std::string tipo, std::string nome) {
-                this->tipo = tipo;
-                this->nome = nome;
-            }
+            produto(std::string tipo, std::string nome);
+			void setStock(int stock);
+			int getStock();
+			void setPreco(float preco);
+			float getPreco();
 
     };
 }
 
-
-#endif //FSOFT2026_1DC_5_PRODUTO_H
+#endif
