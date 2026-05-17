@@ -3,23 +3,25 @@
 
 namespace loja {
 
-    class produto {
+    class produto {		//IDs a começar em 3 são sempre Produtos
 
         private:
             int idProd;
             int stock;
-            std::string tipo;
+            std::string plataforma;
             std::string nomeProd;
             float preco;
 
         public:
-            produto(std::string tipo, std::string nome);
+            produto(std::string plataforma, std::string nome);
+			std::string produto::getPlataforma();
+			std::string produto::getNome()
 			void setStock(int stock);
 			int getStock();
 			void setPreco(float preco);
 			float getPreco();
 			void gerarID(int numProduto);
-			int getID();		//IDs a começar em 3 são sempre Produtos
+			int getID();
     };
 }
 

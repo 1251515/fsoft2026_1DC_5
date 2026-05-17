@@ -3,9 +3,17 @@
 
 namespace loja {
 
-    produto::produto(std::string tipo, std::string nome) {
-        this->tipo = tipo;
+    produto::produto(std::string plataforma, std::string nome) {
+        this->plataforma = plataforma;
         this->nomeProd = nome;
+    }
+
+    std::string produto::getPlataforma() {
+        return this->plataforma;
+    }
+
+    std::string produto::getNome() {
+        return this->nomeProd;
     }
 
     void produto::setStock(int stock) {
@@ -30,11 +38,13 @@ namespace loja {
 
     void produto::gerarID(int numProduto) {
         if (numProduto > 0) {
-            this->numProduto = 3000000 + numProduto;
+            this->idProduto = 3000000 + numProduto;
         }
     }
 
     int produto::getID() {
         return this->idProd;
     }
+
+
 }
