@@ -1,6 +1,3 @@
-#ifndef FSOFT2026_1DC_5_CLIENTE_H
-#define FSOFT2026_1DC_5_CLIENTE_H
-
 namespace loja {
 
     class cliente {
@@ -18,4 +15,3 @@ namespace loja {
     };
 };
 
-#endif

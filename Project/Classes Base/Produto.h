@@ -1,6 +1,3 @@
-#ifndef FSOFT2026_1DC_5_PRODUTO_H
-#define FSOFT2026_1DC_5_PRODUTO_H
-
 namespace loja {
 
     class produto {		//IDs a começar em 3 são sempre Produtos
@@ -13,7 +10,7 @@ namespace loja {
             float preco;
 
         public:
-            produto(std::string plataforma, std::string nome);
+            produto(std::string plataforma, std::string nome, int num);
 			std::string produto::getPlataforma();
 			std::string produto::getNome()
 			void setStock(int stock);
@@ -25,4 +22,3 @@ namespace loja {
     };
 };
 
-#endif
