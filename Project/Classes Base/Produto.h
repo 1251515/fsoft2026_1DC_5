@@ -23,6 +23,6 @@ namespace loja {
 			void gerarID(int numProduto);
 			int getID();
     };
-}
+};
 
 #endif

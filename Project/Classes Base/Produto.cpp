@@ -45,6 +45,4 @@ namespace loja {
     int produto::getID() {
         return this->idProd;
     }
-
-
-}
+};
