@@ -3,10 +3,9 @@
 
 namespace loja {
 
-
     produto::produto(std::string tipo, std::string nome) {
         this->tipo = tipo;
-        this->nome = nome;
+        this->nomeProd = nome;
     }
 
     void produto::setStock(int stock) {
@@ -27,5 +26,15 @@ namespace loja {
 
     float produto::getPreco() {
         return this->preco;
+    }
+
+    void produto::gerarID(int numProduto) {
+        if (numProduto > 0) {
+            this->numProduto = 3000000 + numProduto;
+        }
+    }
+
+    int produto::getID() {
+        return this->idProd;
     }
 }

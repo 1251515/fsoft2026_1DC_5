@@ -6,10 +6,10 @@ namespace loja {
     class produto {
 
         private:
-            int idprod;
+            int idProd;
             int stock;
             std::string tipo;
-            std::string nome;
+            std::string nomeProd;
             float preco;
 
         public:
@@ -18,7 +18,8 @@ namespace loja {
 			int getStock();
 			void setPreco(float preco);
 			float getPreco();
-
+			void gerarID(int numProduto);
+			int getID();		//IDs a começar em 3 são sempre Produtos
     };
 }
 
