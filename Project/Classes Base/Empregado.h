@@ -1,3 +1,5 @@
+#include <string>
+
 namespace loja {
 
     class empregado {       //IDs a começar em 1 são sempre Empregados
@@ -9,9 +11,9 @@ namespace loja {
 
         public:
             empregado(std::string nomeEmpregado);
-            std::string empregado::getNome();
-            void empregado::gerarID(int numEmpregado);
-            int empregado::getID()
-            void empregado::setPWD(std::string pwd)
+            std::string getNome();
+            void gerarID(int numEmpregado);
+            int getID();
+            void setpwd(std::string pwd);
     };
 };

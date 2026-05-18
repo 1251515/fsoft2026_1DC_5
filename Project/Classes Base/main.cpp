@@ -1,10 +1,11 @@
-#include "Classes Base.h"
+#include "ClassesBase.h"
 #include "Listas.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-int main () {
+int main() {
 
     int cmd;
 
@@ -31,5 +32,5 @@ int main () {
                 listaClientes();
                 break;
         }
-    } while (cmd != 0)
+    } while (cmd != 0);
 }

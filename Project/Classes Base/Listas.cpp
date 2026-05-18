@@ -1,6 +1,7 @@
 #include "Listas.h"
-#include "Classes Base.h"
+#include "ClassesBase.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -25,7 +26,7 @@ void listaEmpregados () {
 
         cin >> cmd;
 
-    } while (cmd =! 0)
+    } while (cmd =! 0);
 }
 
 
@@ -39,13 +40,13 @@ void listaProdutos () {
 
     do {
 
-        cout << gow1.getNome() << " - " << gow1.getPlataforma() << " - " << gow1.getPreco << "€" << " - " << gow1.getStock << " - " << gow1.getID << endl
-        cout << er.getNome() << " - " << er.getPlataforma() << " - " << er.getPreco << "€" << " - " << er.getStock << " - " << er.getID << endl
-        cout << re9.getNome() << " - " << re9.getPlataforma() << " - " << re9.getPreco << "€" << " - " << re9.getStock << " - " << re9.getID << endl
+        cout << gow1.getNome() << " - " << gow1.getPlataforma() << " - " << gow1.getPreco << "€" << " - " << gow1.getStock << " - " << gow1.getID << endl;
+        cout << er.getNome() << " - " << er.getPlataforma() << " - " << er.getPreco << "€" << " - " << er.getStock << " - " << er.getID << endl;
+        cout << re9.getNome() << " - " << re9.getPlataforma() << " - " << re9.getPreco << "€" << " - " << re9.getStock << " - " << re9.getID << endl;
 
         cin >> cmd;
 
-    } while (cmd =! 0)
+    } while (cmd =! 0);
 }
 
 void listaClientes () {
@@ -66,5 +67,5 @@ void listaClientes () {
 
         cin >> cmd;
 
-    } while (cmd =! 0)
+    } while (cmd =! 0);
 }

@@ -1,3 +1,5 @@
+#include <string>
+
 namespace loja {
 
     class cliente {
@@ -8,10 +10,10 @@ namespace loja {
             std::string email;
 
         public:
-            cliente::cliente(std::string nome, std::string email, int NIF);
-            std::string cliente::getNome();
-            std::string cliente::getEmail();
-            int cliente::getNIF();
+            cliente(std::string nome, std::string email, int NIF);
+            std::string getNome();
+            std::string getEmail();
+            int getNIF();
     };
 };
 

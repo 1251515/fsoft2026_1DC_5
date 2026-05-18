@@ -1,3 +1,5 @@
+#include <string>
+
 namespace loja {
 
     class produto {		//IDs a começar em 3 são sempre Produtos
@@ -11,8 +13,8 @@ namespace loja {
 
         public:
             produto(std::string plataforma, std::string nome, int num);
-			std::string produto::getPlataforma();
-			std::string produto::getNome()
+			std::string getPlataforma();
+			std::string getNome();
 			void setStock(int stock);
 			int getStock();
 			void setPreco(float preco);

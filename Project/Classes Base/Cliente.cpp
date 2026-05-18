@@ -1,4 +1,5 @@
 #include "Cliente.h"
+#include <string>
 
 namespace loja {
 

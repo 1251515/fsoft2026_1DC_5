@@ -1,4 +1,5 @@
 #include "Produto.h"
+#include <string>
 
 
 namespace loja {

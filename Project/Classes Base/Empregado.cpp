@@ -1,4 +1,5 @@
 #include "Empregado.h"
+#include <string>
 
 namespace loja {
 
@@ -21,7 +22,7 @@ namespace loja {
         return this->idEmpregado;
     }
 
-    std::string empregado::getNome() {
+    void std::string empregado::getNome() {
         return this->nomeEmpregado;
     }
 };
