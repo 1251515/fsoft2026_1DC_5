@@ -10,10 +10,10 @@ namespace loja {
             std::string pwdEmpregado;
 
         public:
-            empregado(std::string nomeEmpregado);
+            empregado(std::string nome, int num);
             std::string getNome();
             void gerarID(int numEmpregado);
             int getID();
-            void setpwd(std::string pwd);
+            void setPWD(std::string pwd);
     };
 };

@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(TesteClasses
         main.cpp
-        Listas.cpp
         Cliente.cpp
         Empregado.cpp
         Produto.cpp

@@ -40,7 +40,7 @@ namespace loja {
 
     void produto::gerarID(int numProduto) {
         if (numProduto > 0) {
-            this->idProduto = 3000000 + numProduto;
+            this->idProd = 3000000 + numProduto;
         }
     }
 

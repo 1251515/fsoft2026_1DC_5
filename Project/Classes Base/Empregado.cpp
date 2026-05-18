@@ -3,7 +3,7 @@
 
 namespace loja {
 
-    empregado(std::string nome, int num) {
+    empregado::empregado(std::string nome, int num) {
         this->nomeEmpregado = nome;
         this->idEmpregado = 1000000 + gerarID(num);
     }
