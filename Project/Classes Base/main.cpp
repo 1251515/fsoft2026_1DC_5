@@ -68,7 +68,7 @@ void listaProdutos() {
     int cmd;
 
     loja::produto gow1 ("PS2", "God of War", 1);
-    loja::produto er ("PS5", "Elden Ring", 2);
+    loja::produto er ("XBox One", "Elden Ring", 2);
     loja::produto re9 ("PC", "Resident Evil: REQUIEM", 3);
 
     do {

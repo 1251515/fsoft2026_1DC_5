@@ -22,7 +22,7 @@ namespace loja {
         return this->idEmpregado;
     }
 
-    void std::string empregado::getNome() {
+    std::string empregado::getNome() {
         return this->nomeEmpregado;
     }
 };

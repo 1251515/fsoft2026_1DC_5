@@ -7,7 +7,7 @@ namespace loja {
     produto::produto(std::string plataforma, std::string nome, int num) {
         this->plataforma = plataforma;
         this->nomeProd = nome;
-		this->idProduto = gerarID(num);
+		gerarID(num);
     }
 
     std::string produto::getPlataforma() {
@@ -47,4 +47,4 @@ namespace loja {
     int produto::getID() {
         return this->idProd;
     }
-};
+}
