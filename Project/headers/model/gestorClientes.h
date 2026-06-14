@@ -1,7 +1,6 @@
 #pragma once
 
 #include <vector>
-
 #include "Cliente.h"
 
 namespace loja::gestor {
@@ -12,7 +11,7 @@ namespace loja::gestor {
             std::vector<cliente> clientList;
 
         public:
-            bool addCliente (const cliente& cliente);
+            bool addCliente (const std::string& nome, const int& NIF, const std::string& email);
             bool removeCliente (int NIF);
     };
 }

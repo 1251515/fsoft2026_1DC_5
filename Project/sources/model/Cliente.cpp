@@ -5,14 +5,10 @@ using namespace loja;
 
 namespace loja {
 
-	cliente::cliente(std::string nome, std::string email, int NIF) {
+	cliente::cliente(const std::string& nome, const std::string& email, const int& NIF) {
 		this->nomeCliente = nome;
 		this->email = email;
-		if (NIF >= 100000000) {
-			this->NIF = NIF;
-		} else {
-			this -> NIF = 0;
-		}
+		this->NIF = NIF;
 	}
 
 	std::string cliente::getNome() const{

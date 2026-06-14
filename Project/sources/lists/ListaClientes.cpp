@@ -1,3 +1,6 @@
+#pragma once
+
+
 #include "../../headers/model/gestorClientes.h"
 #include "../../headers/model/Cliente.h"
 #include "../../headers/lists/ListaClientes.h"
@@ -19,7 +22,7 @@ using namespace std;
 
         cout << string(85, '-') << endl;
 
-        for (int i = 0; i < clientList.size(); i++) {
+        for (int i = 0; i <= lista.size(); i++) {
             cout << left
                 << setw(40) << lista[i].getNome()
                 << setw(9) << lista[i].getNIF()

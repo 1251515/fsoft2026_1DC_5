@@ -1,30 +1,21 @@
 #include "../../headers/model/Empregado.h"
+#include "../../headers/model/gestorEmpregados.h"
 #include <string>
 
 using namespace loja;
 
 namespace loja {
 
-    empregado::empregado(std::string nome, int num) {
+    empregado::empregado(const std::string& nome, const int& id) {
         this->nomeEmpregado = nome;
-        this->idEmpregado = 4000000 + gerarID(num);
+        this->idEmpregado = id;
     }
 
-    void empregado::setPWD(std::string pwd) {
-        this->pwdEmpregado = pwd;
-    }
-
-    void empregado::gerarID(int numEmpregado) {
-        if (numEmpregado > 0) {
-            this->idEmpregado = 4000000 + numEmpregado;
-        }
-    }
-
-    int empregado::getID() {
+    int empregado::getID() const {
         return this->idEmpregado;
     }
 
-    std::string empregado::getNome() {
+    std::string empregado::getNome() const {
         return this->nomeEmpregado;
     }
 };

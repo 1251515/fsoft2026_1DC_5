@@ -9,13 +9,11 @@ namespace loja {
         private:
             int idEmpregado;
             std::string nomeEmpregado;
-            std::string pwdEmpregado;
 
         public:
-            empregado(std::string nome, int num);
-            std::string getNome();
-            void gerarID(int numEmpregado);
-            int getID();
-            void setPWD(std::string pwd);
+            empregado(const std::string& nome, const int& id);
+            std::string getNome() const;
+            int getID() const;
+
     };
 };

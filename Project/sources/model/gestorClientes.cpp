@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../../headers/model/gestorClientes.h"
 #include "../../headers/model/Cliente.h"
 #include <vector>
@@ -7,21 +9,19 @@ using namespace loja::gestor;
 
 namespace loja::gestor {
 
-    bool gestorClientes::addCliente(const cliente& cliente) {
+    bool gestorClientes::addCliente(const std::string& nome, const int& NIF, const std::string& email) {
 
-        for (int i = 0; i < clientList.size(); i++) {
-            if (cliente.getNIF() == clientList[i].getNIF()) {
-                std::cout << "NIF já existente" << std::endl;
-                return false;
-            }
+        if (nome.empty() || email.empty() || NIF < 100000000 || NIF > 999999999) {
+            return false;
         }
-        clientList.push_back(cliente);
+        cliente novo(nome, email, NIF);
+        clientList.push_back(novo);
         return true;
     }
 
     bool gestorClientes::removeCliente(int NIF) {
 
-        for (int i = 0; i < clientList.size(); i++) {
+        for (int i = 0; i <= clientList.size(); i++) {
             if (clientList[i].getNIF() == NIF) {
                 clientList.erase(clientList.begin() + i);
                 return true;

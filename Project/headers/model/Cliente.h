@@ -13,7 +13,7 @@ namespace loja {
             std::string email;
 
         public:
-            cliente(std::string nome, std::string email, int NIF);
+            cliente(const std::string& nome, const std::string& email, const int& NIF);
             std::string getNome() const;
             std::string getEmail() const;
             int getNIF() const;
