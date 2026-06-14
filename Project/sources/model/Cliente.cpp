@@ -13,15 +13,15 @@ namespace loja {
 		}
 	}
 
-	std::string cliente::getNome() {
+	std::string cliente::getNome() const{
 		return this->nomeCliente;
 	}
 
-	std::string cliente::getEmail() {
+	std::string cliente::getEmail() const{
 		return this->email;
 	}
 
-	int cliente::getNIF() {
+	int cliente::getNIF() const{
 		return this->NIF;
 	}
 }
