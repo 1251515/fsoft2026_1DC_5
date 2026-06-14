@@ -14,7 +14,7 @@ namespace loja::gestor {
 
         public:
             bool addCliente (cliente& cliente);
-            bool removeCliente (cliente& cliente);
+            bool removeCliente (int NIF);
 
     }
 }
