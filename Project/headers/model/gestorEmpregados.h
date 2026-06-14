@@ -12,7 +12,7 @@ namespace loja::gestor {
             static int nextID = 4000000;
         public:
             bool addEmpregado(const std::string& nome);
-            bool removeEmpregado(const empregado& empregado);
+            bool removeEmpregado(int ID);
             static int gerarID();
     };
 }
