@@ -1,6 +1,8 @@
 #include "../../headers/model/Cliente.h"
 #include <string>
 
+using namespace loja;
+
 namespace loja {
 
 	cliente::cliente(std::string nome, std::string email, int NIF) {

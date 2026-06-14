@@ -1,5 +1,4 @@
-#ifndef FSOFT2026_1DC_5_GESTORCLIENTES_H
-#define FSOFT2026_1DC_5_GESTORCLIENTES_H
+#pragma once
 
 #include <vector>
 
@@ -10,13 +9,10 @@ namespace loja::gestor {
     class gestorClientes {
 
         private:
-            std::vector<Cliente> clientList;
+            std::vector<cliente> clientList;
 
         public:
-            bool addCliente (cliente& cliente);
+            bool addCliente (const cliente& cliente);
             bool removeCliente (int NIF);
-
-    }
+    };
 }
-
-#endif

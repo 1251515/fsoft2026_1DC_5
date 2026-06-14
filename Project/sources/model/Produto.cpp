@@ -1,6 +1,7 @@
 #include "../../headers/model/Produto.h"
 #include <string>
 
+using namespace loja;
 
 namespace loja {
 

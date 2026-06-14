@@ -1,8 +1,10 @@
+#pragma once
+
 #include <string>
 
 namespace loja {
 
-    class empregado {       //IDs a começar em 1 são sempre Empregados
+    class empregado {       //IDs a começar em 4 são sempre Empregados
 
         private:
             int idEmpregado;

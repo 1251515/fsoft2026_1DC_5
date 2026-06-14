@@ -1,11 +1,13 @@
 #include "../../headers/model/Empregado.h"
 #include <string>
 
+using namespace loja;
+
 namespace loja {
 
     empregado::empregado(std::string nome, int num) {
         this->nomeEmpregado = nome;
-        this->idEmpregado = 1000000 + gerarID(num);
+        this->idEmpregado = 4000000 + gerarID(num);
     }
 
     void empregado::setPWD(std::string pwd) {
@@ -14,7 +16,7 @@ namespace loja {
 
     void empregado::gerarID(int numEmpregado) {
         if (numEmpregado > 0) {
-            this->idEmpregado = 1000000 + numEmpregado;
+            this->idEmpregado = 4000000 + numEmpregado;
         }
     }
 

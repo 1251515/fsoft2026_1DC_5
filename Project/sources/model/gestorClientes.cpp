@@ -3,10 +3,11 @@
 #include <vector>
 #include <iostream>
 
+using namespace loja::gestor;
 
 namespace loja::gestor {
 
-    bool gestorClientes::addCliente(cliente& cliente) {
+    bool gestorClientes::addCliente(const cliente& cliente) {
 
         for (int i = 0; i < clientList.size(); i++) {
             if (cliente.getNIF() == clientList[i].getNIF()) {
@@ -29,6 +30,5 @@ namespace loja::gestor {
 
         std::cout << "ERRO: NIF não encontrado" << std::endl;
         return false;
-
     }
 }
