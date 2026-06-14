@@ -6,8 +6,10 @@ namespace loja {
 	cliente::cliente(std::string nome, std::string email, int NIF) {
 		this->nomeCliente = nome;
 		this->email = email;
-		if (nif >= 100000000) {
+		if (NIF >= 100000000) {
 			this->NIF = NIF;
+		} else {
+			this -> NIF = 0;
 		}
 	}
 
