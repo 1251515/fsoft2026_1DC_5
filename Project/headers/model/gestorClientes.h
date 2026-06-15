@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <string>
 #include "Cliente.h"
 
 namespace loja::gestor {

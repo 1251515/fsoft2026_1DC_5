@@ -6,9 +6,9 @@
 #include <iostream>
 
 
-using namespace loja::gestor;
-
 namespace loja::gestor {
+
+    int gestor_empregados::nextID = 4000000;
 
     int gestor_empregados::gerarID() {
         return nextID++;
@@ -25,7 +25,7 @@ namespace loja::gestor {
 
     bool gestor_empregados::removeEmpregado(int ID) {
 
-        for (int i = 0; i <= listaEmpregados.size(); i++) {
+        for (int i = 0; i <= listaEmpregados.size() - 1; i++) {
             if (listaEmpregados[i].getID() == ID) {
                 listaEmpregados.erase(listaEmpregados.begin() + i);
                 return true;

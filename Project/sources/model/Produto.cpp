@@ -11,12 +11,25 @@ namespace loja {
 		gerarID(num);
     }
 
-    std::string produto::getPlataforma() {
+    std::string produto::getPlataforma() const{
         return this->plataforma;
     }
 
-    std::string produto::getNome() {
+    std::string produto::getNome() const{
         return this->nomeProd;
+    }
+
+
+    int produto::getStock() const{
+        return this->stock;
+    }
+
+    float produto::getPreco() const {
+        return this->preco;
+    }
+
+    int produto::getID() const{
+        return this->idProd;
     }
 
     void produto::setStock(int stock) {
@@ -25,9 +38,6 @@ namespace loja {
         }
     }
 
-    int produto::getStock() {
-        return this->stock;
-    }
 
     void produto::setPreco(float preco) {
         if (preco >= 0) {
@@ -35,9 +45,6 @@ namespace loja {
         }
     }
 
-    float produto::getPreco() {
-        return this->preco;
-    }
 
     void produto::gerarID(int numProduto) {
         if (numProduto > 0) {
@@ -45,7 +52,5 @@ namespace loja {
         }
     }
 
-    int produto::getID() {
-        return this->idProd;
-    }
+
 }

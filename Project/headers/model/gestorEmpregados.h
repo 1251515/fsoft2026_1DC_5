@@ -2,6 +2,7 @@
 
 #include "Empregado.h"
 #include <vector>
+#include <string>
 
 
 namespace loja::gestor {
@@ -9,7 +10,7 @@ namespace loja::gestor {
     class gestor_empregados {
         private:
             std::vector<empregado> listaEmpregados;
-            static int nextID = 4000000;
+            static int nextID;
         public:
             bool addEmpregado(const std::string& nome);
             bool removeEmpregado(int ID);
