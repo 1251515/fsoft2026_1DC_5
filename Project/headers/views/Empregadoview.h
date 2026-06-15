@@ -1,0 +1,8 @@
+//
+// Created by bruno on 15/06/2026.
+//
+
+#ifndef FSOFT2026_1DC_5_EMPREGADOVIEW_H
+#define FSOFT2026_1DC_5_EMPREGADOVIEW_H
+
+#endif //FSOFT2026_1DC_5_EMPREGADOVIEW_H
