@@ -7,25 +7,27 @@ using namespace loja;
 
 venda::venda(
         int idVenda,
-        int idCliente) {
+        int idCliente,
+        int idEmpregado) {
 
     this->idVenda = idVenda;
     this->idCliente = idCliente;
+    this->idEmpregado = idEmpregado;
 
     concluida = false;
 }
 
 int venda::getID() const {
 
-    return idVenda;
+    return this->idVenda;
 }
 
 int venda::getClienteID() const {
 
-    return idCliente;
+    return this->idCliente;
 }
 
-bool venda::getEstado() const {
+bool venda::getEstado() {
 
     return concluida;
 }

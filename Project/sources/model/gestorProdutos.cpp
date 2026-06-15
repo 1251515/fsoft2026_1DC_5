@@ -19,7 +19,7 @@ namespace loja::gestor {
         if (nome.empty() || plataforma.empty()) {
             return false;
         }
-        produto novo (nome, plataforma, gerarID(), 0, 0);
+        produto novo (nome, plataforma, gerarID(), 0 /*preço*/, 0 /*stock*/);
         gameList.push_back(novo);
         return true;
     }

@@ -16,6 +16,7 @@ namespace loja {
 
         int idVenda;
         int idCliente;
+        int idEmpregado;
 
         std::vector<int> produtos;
 
@@ -25,12 +26,16 @@ namespace loja {
 
         venda(
             int idVenda,
-            int idCliente
-        );
+            int idCliente,
+            int idEmpregado);
 
-        int getID();
+        int getID() const;
 
         bool getEstado();
+
+        int getClienteID() const;
+
+        void setEstado(bool estado);
 
         void alterarProdutos(
             const std::vector<int>& p

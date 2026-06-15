@@ -12,11 +12,16 @@ namespace loja {
 
 		std::string plataforma;
 		std::string nomeProd;
+		int idProd;
 
 
 	public:
 
-		produto(std::string nomeProd, std::string plataforma, int idProd, float preco, int stock);
+		produto(const std::string& nome,
+				const std::string& plataforma,
+				const int& id,
+				const float& preco,
+				const int& stock);
 
 		float preco;
 		int stock;
