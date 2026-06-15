@@ -6,21 +6,23 @@
 #define FSOFT2026_1DC_5_PRODUTOVIEW_H
 #pragma once
 
-#include "../../headers/model/Produto.h"
+#pragma once
+
+#include <vector>
 #include <string>
-namespace loja {
+#include "../../headers/model/Produto.h"
+class ProdutoView {
 
-    class ProdutoView {
+public:
 
-    public:
-        produto getProduto();
+    loja::produto getProduto();
 
-        int getProdutoID();
 
-        void mostrarProduto(const produto& p);
+    int getProdutoID();
 
-        void mostrarStock(const std::vector<produto>& produtos);
-    };
 
-}
+    void mostrarProduto(const loja::produto& p);
+
+    void mostrarStock(const std::vector<loja::produto>& produtos);
+};
 #endif //FSOFT2026_1DC_5_PRODUTOVIEW_H
