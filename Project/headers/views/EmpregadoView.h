@@ -1,8 +1,21 @@
-//
-// Created by bruno on 15/06/2026.
-//
+#pragma once
 
-#ifndef FSOFT2026_1DC_5_EMPREGADOVIEW_H
-#define FSOFT2026_1DC_5_EMPREGADOVIEW_H
+#include <string>
+#include <vector>
+#include "../model/Empregado.h"
+#include "../model/gestorEmpregados.h"
 
-#endif //FSOFT2026_1DC_5_EMPREGADOVIEW_H
+
+namespace loja::view {
+
+    class EmpregadoView {
+
+        public:
+            static void printEmpregados(const std::vector<empregado>& lista);
+            static int menuEmpregados();
+
+            static std::string pedirNomeEmpregado();
+    };
+
+}
+

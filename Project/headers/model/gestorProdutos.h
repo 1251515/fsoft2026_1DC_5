@@ -19,6 +19,7 @@ namespace loja::gestor {
             void setStock(const int idProd, int stock);
             void setPreco(const int idProd, int preco);
             std::vector<produto> getProdutos() const;
+            produto* procurarproduto(int ID);
     };
 
 }

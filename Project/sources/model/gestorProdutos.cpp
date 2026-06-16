@@ -56,4 +56,13 @@ namespace loja::gestor {
     std::vector<produto> gestor_produtos::getProdutos() const {
         return this->gameList;
     }
+
+    produto* gestor_produtos::procurarproduto(int ID) {
+        for (auto& e : gameList) {
+            if (e.getID() == ID) {
+                return &e;
+            }
+        }
+        return nullptr;
+    }
 }

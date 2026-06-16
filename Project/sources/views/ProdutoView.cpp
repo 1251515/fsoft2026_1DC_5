@@ -15,6 +15,9 @@ int loja::view::ProdutoView::menuProdutos() {
     cout << "1 - Criar Produto" << endl;
     cout << "2 - Remover Produto" << endl;
     cout << "3 - Ver Listagem de Produtos" << endl;
+    cout << "4 - Procurar Produto" << endl;
+    cout << "5 - Alterar Preço de Produto" << endl;
+    cout << "6 - Alterar Stock de Produto" << endl;
     cout << endl;
     cout << "0 - Sair" << endl;
 
@@ -29,7 +32,7 @@ int loja::view::ProdutoView::menuProdutos() {
            continue;
        }
 
-       if (opcao < 0 || opcao > 3) {
+       if (opcao < 0 || opcao > 4) {
            cout << "ERRO: Escolha uma opção válida";
            continue;
        }

@@ -35,7 +35,7 @@ namespace loja::gestor {
         std::cout << "ERRO: ID não encontrado" << std::endl;
         return false;
     }
-    loja::empregado* gestor_empregados::procurarEmpregado(int ID) {
+    empregado* gestor_empregados::procurarEmpregado(int ID) {
         for (auto& e : listaEmpregados) {
             if (e.getID() == ID) {
                 return &e;

@@ -2,7 +2,7 @@
 // Created by bruno on 15/06/2026.
 //
 
-#include ""../../headers/views/Vendaview.h"
+
 #include "../../headers/views/VendaView.h"
 
 using namespace loja;

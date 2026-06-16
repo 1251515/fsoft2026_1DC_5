@@ -15,5 +15,6 @@ namespace loja::gestor {
             bool addCliente (const std::string& nome, const int& NIF, const std::string& email);
             bool removeCliente (int NIF);
             std::vector<cliente> getClientes () const;
+            cliente* procurarcliente(int NIF);
     };
 }

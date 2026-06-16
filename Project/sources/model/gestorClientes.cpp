@@ -35,4 +35,13 @@ namespace loja::gestor {
     std::vector<cliente> gestorClientes::getClientes() const {
         return this->clientList;
     }
+
+    cliente* gestorClientes::procurarcliente(int NIF) {
+        for (auto& e : clientList) {
+            if (e.getNIF() == NIF) {
+                return &e;
+            }
+        }
+        return nullptr;
+    }
 }
