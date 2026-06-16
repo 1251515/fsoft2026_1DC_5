@@ -5,10 +5,9 @@
 
 using namespace loja;
 
-venda::venda(
-        int idVenda,
-        int idCliente,
-        int idEmpregado) {
+venda::venda(int idVenda,
+            int idCliente,
+            int idEmpregado) {
 
     this->idVenda = idVenda;
     this->idCliente = idCliente;
@@ -37,8 +36,3 @@ void venda::setEstado(bool estado) {
     concluida = estado;
 }
 
-void venda::alterarProdutos(
-        const std::vector<int>& p) {
-
-    produtos = p;
-}

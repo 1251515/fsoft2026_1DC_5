@@ -26,9 +26,9 @@ namespace loja {
         return this->quantidade * this->precoUnitario;
     }
 
-    void itemVenda::setQuantidade(int quantidade) {
-        if (quantidade > 0) {
-            this->quantidade = quantidade;
+    void itemVenda::setQuantidade(int quant) {
+        if (quant > 0) {
+            this->quantidade = quant;
         }
     }
 
@@ -38,4 +38,9 @@ namespace loja {
         }
     }
 
+    void itemVenda::setProduto(const int prod) {
+        if (prod >= 3000000 && prod <= 3999999) {
+            this->idProduto = prod;
+        }
+    }
 }

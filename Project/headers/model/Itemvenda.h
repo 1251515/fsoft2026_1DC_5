@@ -25,7 +25,8 @@ namespace loja {
         float getSubtotal() const;
 
         void setQuantidade(int quantidade);
-        void setPrecoUnitario(float preco);
+        void setPrecoUnitario(const float preco);
+        void setProduto(const int prod);
     };
 
 };

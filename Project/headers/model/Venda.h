@@ -26,9 +26,9 @@ namespace loja {
     public:
 
         venda(
-            int idVenda,
-            int idCliente,
-            int idEmpregado);
+            const int idVenda,
+            const int idCliente,
+            const int idEmpregado);
 
         int getID() const;
 
@@ -38,9 +38,6 @@ namespace loja {
 
         void setEstado(bool estado);
 
-        void alterarProdutos(
-            const std::vector<int>& p
-        );
     };
 
 }
