@@ -12,7 +12,7 @@
 
 namespace loja {
 
-    // UC do diagrama: DadosDuplicadosException
+    // DadosDuplicadosException
     class DadosDuplicadosException : public std::exception {
     private:
         std::string mensagem;
@@ -24,7 +24,7 @@ namespace loja {
         }
     };
 
-    // UC do diagrama: DadosNaoEncontradosException
+    //DadosNaoEncontradosException
     class DadosNaoEncontradosException : public std::exception {
     private:
         std::string mensagem;
@@ -36,7 +36,7 @@ namespace loja {
         }
     };
 
-    // UC do diagrama: DadosInvalidosException
+    // DadosInvalidosException
     class DadosInvalidosException : public std::exception {
     private:
         std::string mensagem;
@@ -48,7 +48,7 @@ namespace loja {
         }
     };
 
-    // UC do diagrama: StockInsuficienteException
+    // StockInsuficienteException
     class StockInsuficienteException : public std::exception {
     private:
         std::string mensagem;

@@ -35,5 +35,21 @@ namespace loja::gestor {
         std::cout << "ERRO: ID não encontrado" << std::endl;
         return false;
     }
+    loja::empregado* gestor_empregados::procurarEmpregado(int ID) {
+        for (auto& e : listaEmpregados) {
+            if (e.getID() == ID) {
+                return &e;
+            }
+        }
+        return nullptr;
+    }
+
+    const std::vector<loja::empregado>& gestor_empregados::obterListaEmpregados() const {
+        return listaEmpregados;
+    }
+
+    int gestor_empregados::getTotalEmpregados() const {
+        return listaEmpregados.size();
+    }
 }
 
