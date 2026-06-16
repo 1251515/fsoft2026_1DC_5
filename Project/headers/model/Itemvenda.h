@@ -7,6 +7,7 @@
 #endif //FSOFT2026_1DC_5_ITEMVENDA_H
 #pragma once
 #include <string>
+
 namespace loja {
 
     class itemVenda {
