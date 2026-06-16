@@ -32,12 +32,12 @@ int loja::view::ProdutoView::menuProdutos() {
            continue;
        }
 
-       if (opcao < 0 || opcao > 4) {
+       if (opcao < 0 || opcao > 7) {
            cout << "ERRO: Escolha uma opção válida";
            continue;
        }
 
-       if (opcao >= 0 && opcao <= 3) {
+       if (opcao >= 0 && opcao <= 6) {
            break;
        }
 

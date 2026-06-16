@@ -2,6 +2,7 @@
 
 #include <vector>
 #include "Itemvenda.h"
+#include "Pagamento.h"
 
 namespace loja {
 
@@ -15,6 +16,8 @@ namespace loja {
 
         std::vector<itemVenda> produtos;
 
+        pagamento pagamentoVenda;
+
         bool concluida;
 
         static int nextID;
@@ -24,19 +27,20 @@ namespace loja {
         venda(const int idCliente,
             const int idEmpregado);
 
-        int getID() const;
-
         bool getEstado();
+        void setEstado(bool estado);
 
         int getClienteID() const;
 
-        void setEstado(bool estado);
-
         static int gerarIDvenda();
+        int getIDvenda() const;
 
         void adicionarItem(const itemVenda& item);
 
         float getTotal() const;
+
+        pagamento& getPagamento();
+        void setPagamento(TipoPagamento tipo);
 
     };
 

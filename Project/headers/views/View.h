@@ -1,8 +1,12 @@
-//
-// Created by bruno on 16/06/2026.
-//
+#pragma once
 
-#ifndef FSOFT2026_1DC_5_VIEW_H
-#define FSOFT2026_1DC_5_VIEW_H
+#include <string>
 
-#endif //FSOFT2026_1DC_5_VIEW_H
+namespace loja::view {
+
+    class mainView {
+
+        public:
+            static int menuPrincipal();
+    };
+}

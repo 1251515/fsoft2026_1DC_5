@@ -1,25 +1,25 @@
-//
-// Created by bruno on 15/06/2026.
-//
-
-#ifndef FSOFT2026_1DC_5_VENDAVIEW_H
-#define FSOFT2026_1DC_5_VENDAVIEW_H
-#endif //FSOFT2026_1DC_5_VENDAVIEW_H
 #pragma once
 
 #include "../model/Venda.h"
+#include "../model/Itemvenda.h"
 #include <string>
-namespace loja {
+
+
+namespace loja::view {
 
     class VendaView {
 
     public:
 
-        venda getVenda();
+        static int menuVendas();
 
-        int getVendaID();
+        static int pedirIDempregado();
+        static int pedirIDProduto();
+        static int pedirQuantidade(int stock);
+        static bool adicionarMaisProdutos();
+        static int pedirNIF();
+        static TipoPagamento pedirTipoPagamento();
 
-        void mostrarEstado(const venda& v);
     };
 
 }

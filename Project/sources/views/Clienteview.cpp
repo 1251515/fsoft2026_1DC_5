@@ -49,12 +49,12 @@ int loja::view::clienteView::menuClientes() {
             continue;
         }
 
-        if (opcao < 0 || opcao > 4) {
+        if (opcao < 0 || opcao > 5) {
             cout << "ERRO: Escolha uma opção válida";
             continue;
         }
 
-        if (opcao >= 0 && opcao <= 3) {
+        if (opcao >= 0 && opcao <= 4) {
             break;
         }
 

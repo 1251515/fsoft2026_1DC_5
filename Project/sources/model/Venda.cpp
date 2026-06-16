@@ -18,7 +18,7 @@ venda::venda(int idCliente,
     concluida = false;
 }
 
-int venda::getID() const {
+int venda::getIDvenda() const {
 
     return this->idVenda;
 }
@@ -56,4 +56,12 @@ float venda::getTotal() const {
     }
 
     return total;
+}
+
+pagamento &venda::getPagamento() {
+    return pagamentoVenda;
+}
+
+void venda::setPagamento(TipoPagamento tipo) {
+    pagamentoVenda.setTipo(tipo);
 }

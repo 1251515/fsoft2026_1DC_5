@@ -1,56 +1,198 @@
-//
-// Created by bruno on 15/06/2026.
-//
-
-
 #include "../../headers/views/VendaView.h"
+#include "../../headers/model/gestorProdutos.h"
 
-using namespace loja;
+#include <string>
+#include <iostream>
+
+
 using namespace std;
 
-venda VendaView::getVenda() {
+int loja::view::VendaView::menuVendas() {
 
-    int idVenda;
-    int idCliente;
+    int opcao;
 
-    cout << "ID Venda: ";
-    cin >> idVenda;
+    cout << "1 - Criar Venda" << endl;
 
-    cout << "ID Cliente: ";
-    cin >> idCliente;
+    cout << endl;
+    cout << "0 - Sair" << endl;
 
-    vector<int> produtos;
+    while (true) {
 
-    int id;
+        std::cout << "Opção: ";
 
-    cout << "Introduza IDs produtos (-1 termina): ";
+        if (!(std::cin >> opcao)) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            cout << "ERRO: Escolha uma opção válida";
+            continue;
+        }
 
-    while(cin >> id && id != -1){
+        if (opcao < 0 || opcao > 1) {
+            cout << "ERRO: Escolha uma opção válida";
+            continue;
+        }
 
-        produtos.push_back(id);
+        if (opcao >= 0 && opcao <= 1) {
+            break;
+        }
+
     }
-
-    return venda(
-        idVenda,
-        idCliente,
-        produtos
-    );
+    return opcao;
 }
 
-int VendaView::getVendaID() {
+int loja::view::VendaView::pedirIDempregado() {
 
-    int id;
+        int ID = 0;
 
-    cout << "ID Venda: ";
-    cin >> id;
+        cout << "ID Empregado: ";
 
-    return id;
+        while (true) {
+
+            if (!(std::cin >> ID)) {
+                std::cin.clear();
+                std::cin.ignore(10000, '\n');
+                cout << "ERRO: ID Inválido. \n";
+                continue;
+            }
+
+            if (ID >= 4000000 && ID <= 4999999) {
+                return ID;
+            }
+
+            cout << "ERRO: ID Inválido. \n";
+            cout << "ID Empregado: ";
+
+        }
 }
 
-void VendaView::mostrarEstado(
-        const venda& v) {
+int loja::view::VendaView::pedirIDProduto() {
 
-    cout << "\nEstado: "
-         << v.getEstado()
-         << endl;
+    int ID = 0;
+
+    cout << "ID Produto: ";
+
+    while (true) {
+
+        if (!(std::cin >> ID)) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            cout << "ERRO: ID Inválido. \n";
+            continue;
+        }
+
+        if (ID >= 3000000 && ID <= 3999999) {
+            return ID;
+        }
+
+        cout << "ERRO: ID Inválido. \n";
+        cout << "ID Produto: ";
+
+    }
+}
+
+int loja::view::VendaView::pedirQuantidade(int stock) {
+
+    int quantidade = 0;
+
+    cout << "Quantidade Produto: ";
+
+    while (true) {
+
+        if (!(std::cin >> quantidade)) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            cout << "ERRO: ID Inválido. \n";
+            continue;
+        }
+
+        if (quantidade >= 1 && quantidade <= stock) {
+            return quantidade;
+        }
+
+        cout << "ERRO: Quantidade inválida. \n";
+        cout << "Quantidade Produto: ";
+
+    }
+}
+
+bool loja::view::VendaView::adicionarMaisProdutos() {
+
+    int opcao;
+
+    std::cout << "\nAdicionar outro produto?\n";
+    std::cout << "1 - Sim\n";
+    std::cout << "0 - Nao\n";
+
+    while (true) {
+
+        std::cout << "Opcao: ";
+
+        if (!(std::cin >> opcao)) {
+
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+
+            std::cout << "ERRO: Introduza uma opcao valida.\n";
+            continue;
+        }
+
+        if (opcao == 1) {
+            return true;
+        }
+
+        if (opcao == 0) {
+            return false;
+        }
+
+        std::cout << "ERRO: Opcao invalida.\n";
+    }
+}
+
+int loja::view::VendaView::pedirNIF() {
+
+    int NIF = 0;
+
+    cout << "Número de Identificação Fiscal: ";
+
+    while (true) {
+
+        if (!(std::cin >> NIF)) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            cout << "ERRO: NIF Inválido. \n";
+            continue;
+        }
+
+        if (NIF >= 100000000 && NIF <= 599999999) {
+            return NIF;
+        }
+
+        cout << "ERRO: NIF Inválido. \n";
+        cout << "Número de Identificação Fiscal: ";
+
+    }
+}
+
+loja::TipoPagamento loja::view::VendaView::pedirTipoPagamento() {
+
+    int opcao;
+
+    std::cout << "\nMetodo de Pagamento\n";
+    std::cout << "1 - Multibanco\n";
+    std::cout << "2 - MBWay\n";
+    std::cout << "3 - Cartao de Credito\n";
+    std::cout << "4 - Dinheiro\n";
+
+    do {
+        std::cout << "Opcao: ";
+        std::cin >> opcao;
+    }
+    while (opcao < 1 || opcao > 4);
+
+    switch (opcao) {
+        case 1: return TipoPagamento::MULTIBANCO;
+        case 2: return TipoPagamento::MBWAY;
+        case 3: return TipoPagamento::CARTAO_CREDITO;
+        default: return TipoPagamento::DINHEIRO;
+    }
 }

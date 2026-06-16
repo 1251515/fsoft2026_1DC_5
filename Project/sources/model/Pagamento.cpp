@@ -1,25 +1,29 @@
-//
-// Created by bruno on 16/06/2026.
-//
+
 #include "../../headers/model/Pagamento.h"
 
-using namespace loja;
 
 namespace loja {
 
-    pagamento::pagamento(TipoPagamento tipo)
-        : tipo(tipo), estado(EstadoPagamento::PENDENTE) {}
+    pagamento::pagamento() {
+        tipo = TipoPagamento::UNDEFINED;
+        estado = EstadoPagamento::PENDENTE;
+    }
+
 
     TipoPagamento pagamento::getTipo() const {
         return this->tipo;
+    }
+
+    void pagamento::setTipo(TipoPagamento metodo) {
+        this->tipo = metodo;
     }
 
     EstadoPagamento pagamento::getEstado() const {
         return this->estado;
     }
 
-    void pagamento::setEstado(EstadoPagamento estado) {
-        this->estado = estado;
+    void pagamento::setEstado(EstadoPagamento status) {
+        this->estado = status;
     }
 
     std::string pagamento::getTipoStr() const {

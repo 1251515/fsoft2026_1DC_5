@@ -1,9 +1,4 @@
-//
-// Created by bruno on 15/06/2026.
-//
 
-#ifndef FSOFT2026_1DC_5_PAGAMENTO_H
-#define FSOFT2026_1DC_5_PAGAMENTO_H
 #pragma once
 
 #include <string>
@@ -14,7 +9,8 @@ namespace loja {
         MULTIBANCO,
         MBWAY,
         CARTAO_CREDITO,
-        DINHEIRO
+        DINHEIRO,
+        UNDEFINED
     };
 
     enum class EstadoPagamento {
@@ -23,15 +19,17 @@ namespace loja {
         RECUSADO
     };
 
-    class Pagamento {
+    class pagamento {
     private:
         TipoPagamento tipo;
         EstadoPagamento estado;
 
     public:
-        Pagamento(TipoPagamento tipo);
+        pagamento();
 
         TipoPagamento getTipo() const;
+        void setTipo(TipoPagamento metodo);
+
         EstadoPagamento getEstado() const;
         void setEstado(EstadoPagamento estado);
 
@@ -40,4 +38,3 @@ namespace loja {
     };
 
 }
-#endif //FSOFT2026_1DC_5_PAGAMENTO_H
