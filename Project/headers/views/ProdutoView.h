@@ -2,8 +2,8 @@
 
 #include <vector>
 #include <string>
-#include "../../headers/model/Produto.h"
-#include "../../headers/model/gestorProdutos.h"
+#include "../model/Produto.h"
+#include "../model/gestorProdutos.h"
 
 
 namespace loja::view {

@@ -10,7 +10,7 @@
 #include <string>
 #include <stdexcept>
 
-namespace loja {
+namespace loja::exceptions {
 
     // DadosDuplicadosException
     class DadosDuplicadosException : public std::exception {
