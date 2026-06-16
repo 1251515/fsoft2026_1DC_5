@@ -15,8 +15,7 @@ namespace loja::gestor {
         bool addEmpregado(const std::string& nome);
         bool removeEmpregado(int ID);
         empregado* procurarEmpregado(int ID);
-        const std::vector<empregado>& obterListaEmpregados() const;
-        int getTotalEmpregados() const;
+        const std::vector<empregado>& getEmpregados() const;
         static int gerarID();
 
     };

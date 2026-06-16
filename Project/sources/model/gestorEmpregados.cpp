@@ -44,12 +44,9 @@ namespace loja::gestor {
         return nullptr;
     }
 
-    const std::vector<empregado>& gestor_empregados::obterListaEmpregados() const {
+    const std::vector<empregado>& gestor_empregados::getEmpregados() const {
         return listaEmpregados;
     }
 
-    int gestor_empregados::getTotalEmpregados() const {
-        return listaEmpregados.size();
-    }
 }
 
