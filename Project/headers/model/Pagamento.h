@@ -23,13 +23,13 @@ namespace loja {
         RECUSADO
     };
 
-    class pagamento {
+    class Pagamento {
     private:
         TipoPagamento tipo;
         EstadoPagamento estado;
 
     public:
-        pagamento(TipoPagamento tipo);
+        Pagamento(TipoPagamento tipo);
 
         TipoPagamento getTipo() const;
         EstadoPagamento getEstado() const;

@@ -2,7 +2,7 @@
 
 #include "../model/Empregado.h"
 #include "../model/gestorEmpregados.h"
-
+#include <vector>
 class listaEmpregados {
 
     public:
