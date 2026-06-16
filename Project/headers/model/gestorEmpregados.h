@@ -12,12 +12,12 @@ namespace loja::gestor {
         std::vector<empregado> listaEmpregados;
         static int nextID;
     public:
-        gestor_empregados();
         bool addEmpregado(const std::string& nome);
         bool removeEmpregado(int ID);
         empregado* procurarEmpregado(int ID);
         const std::vector<empregado>& obterListaEmpregados() const;
         int getTotalEmpregados() const;
         static int gerarID();
+
     };
 }

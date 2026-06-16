@@ -44,7 +44,7 @@ namespace loja::gestor {
         return nullptr;
     }
 
-    const std::vector<loja::empregado>& gestor_empregados::obterListaEmpregados() const {
+    const std::vector<empregado>& gestor_empregados::obterListaEmpregados() const {
         return listaEmpregados;
     }
 

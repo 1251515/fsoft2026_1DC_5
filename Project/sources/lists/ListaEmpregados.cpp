@@ -20,7 +20,7 @@ void printEmpregados (const std::vector<loja::empregado>& lista) {
         << setw(7) << "ID"
         << endl;
 
-    cout << string(85, '-') << endl;
+    cout << string(60, '-') << endl;            //headline
 
     for (int i = 0; i <= lista.size(); i++) {
         cout << left

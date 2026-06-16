@@ -31,4 +31,8 @@ namespace loja::gestor {
         std::cout << "ERRO: NIF não encontrado" << std::endl;
         return false;
     }
+
+    std::vector<cliente> gestorClientes::getClientes() const {
+        return this->clientList;
+    }
 }

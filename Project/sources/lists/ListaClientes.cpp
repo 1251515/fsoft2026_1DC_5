@@ -20,7 +20,7 @@ using namespace std;
             << setw(30) << "Email"
             << endl;
 
-        cout << string(85, '-') << endl;
+        cout << string(85, '-') << endl;            //headline
 
         for (int i = 0; i <= lista.size(); i++) {
             cout << left

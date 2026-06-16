@@ -52,4 +52,8 @@ namespace loja::gestor {
         std::cout << "ERRO: ID não encontrado" << std::endl;
         return false;
     }
+
+    std::vector<produto> gestor_produtos::getProdutos() const {
+        return this->gameList;
+    }
 }
