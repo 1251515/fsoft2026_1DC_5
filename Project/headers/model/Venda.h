@@ -1,13 +1,7 @@
-//
-// Created by bruno on 15/06/2026.
-//
-
-#ifndef FSOFT2026_1DC_5_VENDA_H
-#define FSOFT2026_1DC_5_VENDA_H
-#endif //FSOFT2026_1DC_5_VENDA_H
 #pragma once
 
 #include <vector>
+#include "Itemvenda.h"
 
 namespace loja {
 
@@ -19,15 +13,15 @@ namespace loja {
         int idCliente;
         int idEmpregado;
 
-        std::vector<int> produtos;
+        std::vector<itemVenda> produtos;
 
         bool concluida;
 
+        static int nextID;
+
     public:
 
-        venda(
-            const int idVenda,
-            const int idCliente,
+        venda(const int idCliente,
             const int idEmpregado);
 
         int getID() const;
@@ -37,6 +31,12 @@ namespace loja {
         int getClienteID() const;
 
         void setEstado(bool estado);
+
+        static int gerarIDvenda();
+
+        void adicionarItem(const itemVenda& item);
+
+        float getTotal() const;
 
     };
 
