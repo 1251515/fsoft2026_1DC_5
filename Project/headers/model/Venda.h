@@ -4,6 +4,7 @@
 
 #ifndef FSOFT2026_1DC_5_VENDA_H
 #define FSOFT2026_1DC_5_VENDA_H
+#endif //FSOFT2026_1DC_5_VENDA_H
 #pragma once
 
 #include <vector>
@@ -43,4 +44,4 @@ namespace loja {
     };
 
 }
-#endif //FSOFT2026_1DC_5_VENDA_H
+

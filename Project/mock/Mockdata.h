@@ -1,0 +1,8 @@
+//
+// Created by bruno on 16/06/2026.
+//
+
+#ifndef FSOFT2026_1DC_5_MOCKDATA_H
+#define FSOFT2026_1DC_5_MOCKDATA_H
+
+#endif //FSOFT2026_1DC_5_MOCKDATA_H
