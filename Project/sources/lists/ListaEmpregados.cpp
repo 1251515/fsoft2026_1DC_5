@@ -13,7 +13,7 @@
 
 using namespace std;
 
-void printLista (const std::vector<loja::empregado>& lista) {
+void printEmpregados (const std::vector<loja::empregado>& lista) {
 
     cout << left
         << setw(40) << "Nome"

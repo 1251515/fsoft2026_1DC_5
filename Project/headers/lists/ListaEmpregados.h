@@ -6,5 +6,5 @@
 class listaEmpregados {
 
     public:
-        void printLista (const std::vector<loja::empregado>& lista);
+        void printEmpregados (const std::vector<loja::empregado>& lista);
 };

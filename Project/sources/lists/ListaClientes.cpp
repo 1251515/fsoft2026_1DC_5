@@ -12,7 +12,7 @@
 
 using namespace std;
 
-    void printLista (const std::vector<loja::cliente>& lista) {
+    void printClientes (const std::vector<loja::cliente>& lista) {
 
         cout << left
             << setw(40) << "Nome"
