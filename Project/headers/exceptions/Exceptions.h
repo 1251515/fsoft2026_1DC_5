@@ -1,64 +1,58 @@
-//
-// Created by bruno on 15/06/2026.
-//
-
-
-#ifndef FSOFT2026_1DC_5_EXCEPTIONS_H
-#define FSOFT2026_1DC_5_EXCEPTIONS_H
 #pragma once
 
+#include <exception>
 #include <string>
-#include <stdexcept>
 
 namespace loja::exceptions {
 
-    // DadosDuplicadosException
-    class DadosDuplicadosException : public std::exception {
-    private:
-        std::string mensagem;
-    public:
-        explicit DadosDuplicadosException(const std::string& msg)
-            : mensagem(msg) {}
-        const char* what() const noexcept override {
-            return mensagem.c_str();
-        }
+
+    class LojaException : public std::exception {
+
+        protected:
+            std::string mensagem;
+
+        public:
+            explicit LojaException(const std::string& msg)
+                : mensagem(msg) {}
+
+            const char* what() const noexcept override {
+                return mensagem.c_str();
+            }
     };
 
-    //DadosNaoEncontradosException
-    class DadosNaoEncontradosException : public std::exception {
-    private:
-        std::string mensagem;
-    public:
-        explicit DadosNaoEncontradosException(const std::string& msg)
-            : mensagem(msg) {}
-        const char* what() const noexcept override {
-            return mensagem.c_str();
-        }
+
+    class DadosDuplicadosException : public LojaException {
+
+        public:
+            explicit DadosDuplicadosException(const std::string& msg)
+                : LojaException(msg) {}
     };
 
-    // DadosInvalidosException
-    class DadosInvalidosException : public std::exception {
-    private:
-        std::string mensagem;
-    public:
-        explicit DadosInvalidosException(const std::string& msg)
-            : mensagem(msg) {}
-        const char* what() const noexcept override {
-            return mensagem.c_str();
-        }
+
+    class DadosNaoEncontradosException : public LojaException {
+
+        public:
+            explicit DadosNaoEncontradosException(const std::string& msg)
+                : LojaException(msg) {}
     };
 
-    // StockInsuficienteException
-    class StockInsuficienteException : public std::exception {
-    private:
-        std::string mensagem;
-    public:
-        explicit StockInsuficienteException(const std::string& msg)
-            : mensagem(msg) {}
-        const char* what() const noexcept override {
-            return mensagem.c_str();
-        }
+
+    class DadosInvalidosException : public LojaException {
+
+        public:
+            explicit DadosInvalidosException(const std::string& msg)
+                : LojaException(msg) {}
+    };
+
+
+    class StockInsuficienteException : public LojaException {
+
+        public:
+            explicit StockInsuficienteException(const std::string& msg)
+                : LojaException(msg) {}
     };
 
 }
-#endif //FSOFT2026_1DC_5_EXCEPTIONS_H
+
+
+

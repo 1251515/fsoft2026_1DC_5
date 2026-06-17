@@ -2,6 +2,7 @@
 
 #include "../../headers/model/gestorClientes.h"
 #include "../../headers/model/Cliente.h"
+#include "../../headers/exceptions/Exceptions.h"
 #include <vector>
 #include <iostream>
 
@@ -12,7 +13,7 @@ namespace loja::gestor {
     bool gestorClientes::addCliente(const std::string& nome, const int& NIF, const std::string& email) {
 
         if (nome.empty() || email.empty() || NIF < 100000000 || NIF > 999999999) {
-            return false;
+            throw exceptions::DadosInvalidosException("Nome ou NIF Inválido");
         }
         cliente novo(nome, email, NIF);
         clientList.push_back(novo);
@@ -28,8 +29,7 @@ namespace loja::gestor {
             }
         }
 
-        std::cout << "ERRO: NIF não encontrado" << std::endl;
-        return false;
+        throw exceptions::DadosNaoEncontradosException("NIF não encontrado");
     }
 
     std::vector<cliente> gestorClientes::getClientes() const {
@@ -42,6 +42,6 @@ namespace loja::gestor {
                 return &e;
             }
         }
-        return nullptr;
+        throw exceptions::DadosNaoEncontradosException("NIF não encontrado");
     }
 }

@@ -1,4 +1,5 @@
 #include "../../headers/model/ItemVenda.h"
+#include "../../headers/exceptions/Exceptions.h"
 
 using namespace loja;
 
@@ -23,6 +24,8 @@ namespace loja {
         if (prod >= 3000000 && prod <= 3999999) {
             this->idProduto = prod;
         }
+
+        throw exceptions::DadosNaoEncontradosException("ID não encontrado");
     }
 
 }

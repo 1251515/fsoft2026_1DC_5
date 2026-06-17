@@ -2,6 +2,7 @@
 
 #include "../../headers/model/Empregado.h"
 #include "../../headers/model/gestorEmpregados.h"
+#include "../../headers/exceptions/Exceptions.h"
 #include <vector>
 #include <iostream>
 
@@ -16,7 +17,7 @@ namespace loja::gestor {
 
     bool gestor_empregados::addEmpregado(const std::string& nome) {
         if (nome.empty()) {
-            return false;
+            throw exceptions::DadosInvalidosException("Nome inválido");
         }
         empregado novo(nome, gerarID());
         listaEmpregados.push_back(novo);
@@ -32,8 +33,7 @@ namespace loja::gestor {
             }
         }
 
-        std::cout << "ERRO: ID não encontrado" << std::endl;
-        return false;
+        throw exceptions::DadosNaoEncontradosException("ID não encontrado");
     }
     empregado* gestor_empregados::procurarEmpregado(int ID) {
         for (auto& e : listaEmpregados) {
@@ -41,7 +41,8 @@ namespace loja::gestor {
                 return &e;
             }
         }
-        return nullptr;
+
+        throw exceptions::DadosNaoEncontradosException("ID não encontrado");
     }
 
     const std::vector<empregado>& gestor_empregados::getEmpregados() const {
