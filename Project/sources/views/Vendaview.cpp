@@ -93,7 +93,7 @@ int loja::view::VendaView::pedirIDProduto() {
     }
 }
 
-int loja::view::VendaView::pedirQuantidade(int stock) {
+int loja::view::VendaView::pedirQuantidade() {
 
     int quantidade = 0;
 
@@ -104,7 +104,7 @@ int loja::view::VendaView::pedirQuantidade(int stock) {
         if (!(std::cin >> quantidade)) {
             std::cin.clear();
             std::cin.ignore(10000, '\n');
-            cout << "ERRO: ID Inválido. \n";
+            cout << "ERRO: Quantidade Inválido. \n";
             continue;
         }
 
@@ -199,3 +199,36 @@ loja::TipoPagamento loja::view::VendaView::pedirTipoPagamento() {
         default: return TipoPagamento::DINHEIRO;
     }
 }
+
+int menuGestaoPagamento() {
+
+    std::cout << "1 - Aprovar pagamento\n";
+    std::cout << "2 - Recusar pagamento\n";
+
+    int opcao;
+    std::cin >> opcao;
+
+    while (true) {
+
+        std::cout << "Opção: ";
+
+        if (!(std::cin >> opcao)) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            cout << "ERRO: Escolha uma opção válida";
+            continue;
+        }
+
+        if (opcao < 0 || opcao > 1) {
+            cout << "ERRO: Escolha uma opção válida";
+            continue;
+        }
+
+        if (opcao >= 0 && opcao <= 1) {
+            break;
+        }
+    }
+    return opcao;
+
+}
+

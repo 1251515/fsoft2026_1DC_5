@@ -71,13 +71,25 @@ namespace loja::gestor {
         return this->gameList;
     }
 
-    produto* gestor_produtos::procurarproduto(int ID) {
+    produto* gestor_produtos::procurarProdutoID(int ID) {
         for (auto& e : gameList) {
             if (e.getID() == ID) {
                 return &e;
             }
         }
         throw exceptions::DadosNaoEncontradosException("ID não encontrado");
+    }
+
+    produto *gestor_produtos::procurarProdutoNome(
+                                                const std::string &nome,
+                                                const std::string &plataforma) {
+
+        for (auto& e : gameList) {
+            if (e.getNome() == nome && e.getPlataforma() == plataforma) {
+                return &e;
+            }
+        }
+        throw exceptions::DadosNaoEncontradosException("Jogo não encontrado");
     }
 }
 

@@ -318,7 +318,7 @@ void Controller::procurarProduto() {
 
         int ID = ProdutoView::pedirIDproduto();
 
-        produto* produtoEncontrado = gestorProdutos.procurarproduto(ID);
+        produto* produtoEncontrado = gestorProdutos.procurarProdutoID(ID);
         ProdutoView::detalhesProduto(*produtoEncontrado);
 
     }
@@ -355,6 +355,95 @@ void Controller::setPrecoProduto() {
             ProdutoView::pedirPreco();
 
         gestorProdutos.setStock(ID, preco);
+    }
+    catch (exceptions::LojaException& e) {
+        View::erro(e.what());
+    }
+}
+
+void Controller::criarVenda() {
+
+    try {
+
+        int IDempregado =
+            EmpregadoView::pedirIDempregado();
+
+        int IDcliente =
+            clienteView::pedirNIF();
+
+        venda vendaAtual (IDcliente, IDempregado);
+
+        while (true) {
+            std::string nomeProduto =
+                ProdutoView::pedirNomeProduto();
+
+            std::string plataforma =
+                ProdutoView::pedirPlataforma();
+
+
+            produto* produtoEncontrado =
+                gestorProdutos.procurarProdutoNome(nomeProduto, plataforma);
+
+            int IDproduto =
+                produtoEncontrado->getID();
+
+
+            int quantidade =
+                VendaView::pedirQuantidade();
+
+
+            itemVenda item(produtoEncontrado->getID(),
+                    quantidade,
+                    produtoEncontrado->getPreco());
+
+            vendaAtual.adicionarItem(item);
+
+
+
+            if (!VendaView::adicionarMaisProdutos()) {
+                break;
+            }
+        }
+
+        float total = vendaAtual.getTotal();
+
+        std::cout << "Total da compra: "
+                  << total
+                  << "€\n";
+
+        vendaAtual.setTotal(total);
+
+
+        TipoPagamento tipoPagamento = VendaView::pedirTipoPagamento();
+
+        vendaAtual.setPagamento(tipoPagamento);
+
+        if (vendaAtual.getPagamento().getEstado() == EstadoPagamento::RECUSADO) {
+            View::erro("Pagamento Recusado");
+            return;
+        }
+
+
+        if (vendaAtual.getPagamento().getEstado() == EstadoPagamento::PENDENTE) {
+            while (true) {
+                switch (VendaView::menuGestaoPagamento()) {
+                    case 1:
+                        vendaAtual.setEstado(EstadoPagamento::APROVADO);
+                        break;
+
+                    case 2:
+                        vendaAtual.setEstado(EstadoPagamento::RECUSADO);
+                        return;
+
+                    default:
+                        break;
+                }
+            }
+        }
+
+
+        gestorVendas.addVenda(vendaAtual);
+        View::sucesso("Compra Efetuada");
     }
     catch (exceptions::LojaException& e) {
         View::erro(e.what());

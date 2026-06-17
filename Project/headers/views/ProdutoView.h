@@ -21,6 +21,7 @@ namespace loja::view {
             static float pedirPreco();
 
 
+
             static void detalhesProduto(const produto& c);
 
     };

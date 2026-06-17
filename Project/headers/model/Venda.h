@@ -20,13 +20,15 @@ namespace loja {
 
         bool concluida;
 
+        float subtotal;
+
     public:
 
         venda(const int idCliente,
             const int idEmpregado);
 
         bool getEstado();
-        void setEstado(bool estado);
+        void setEstado(EstadoPagamento estado);
 
         int getClienteID() const;
 
@@ -35,9 +37,11 @@ namespace loja {
         void adicionarItem(const itemVenda& item);
 
         float getTotal() const;
+        void setTotal(float total);
 
         pagamento& getPagamento();
         void setPagamento(TipoPagamento tipo);
+        void processarPagamento();
 
     };
 

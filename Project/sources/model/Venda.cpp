@@ -30,9 +30,9 @@ bool venda::getEstado() {
     return concluida;
 }
 
-void venda::setEstado(bool estado) {
+void venda::setEstado(EstadoPagamento estado) {
 
-    concluida = estado;
+    this->pagamentoVenda = estado;
 }
 
 
@@ -60,3 +60,31 @@ pagamento &venda::getPagamento() {
 void venda::setPagamento(TipoPagamento tipo) {
     pagamentoVenda.setTipo(tipo);
 }
+
+void venda::processarPagamento() {
+
+    pagamento& p = pagamentoVenda;
+
+    switch (p.getTipo()) {
+
+        case TipoPagamento::MBWAY:
+        case TipoPagamento::MULTIBANCO:
+        case TipoPagamento::CARTAO_CREDITO:
+            p.setEstado(EstadoPagamento::APROVADO);
+            break;
+
+        case TipoPagamento::DINHEIRO:
+            p.setEstado(EstadoPagamento::PENDENTE);
+            break;
+
+        default:
+            p.setEstado(EstadoPagamento::RECUSADO);
+            break;
+    }
+}
+
+
+void venda::setTotal(float preco) {
+    this->subtotal = preco;
+}
+
