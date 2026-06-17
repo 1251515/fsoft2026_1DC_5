@@ -126,7 +126,19 @@ string loja::view::clienteView::pedirEmail() {
     }
 }
 
+void loja::view::clienteView::detalhesCliente(const cliente& c) {
 
+    cout << left
+        << setw(30) << "Nome"
+        << setw(9) << "NIF"
+        << setw(35) << "Email"
+        << endl;
+    cout << string(80, '-') << endl;
+
+    std::cout << "Nome : " << c.getNome() << '\n';
+    std::cout << "NIF  : " << c.getNIF() << '\n';
+    std::cout << "Email: " << c.getEmail() << '\n';
+}
 
 
 

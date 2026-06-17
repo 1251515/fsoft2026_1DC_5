@@ -10,22 +10,20 @@ using namespace loja::gestor;
 
 namespace loja::gestor {
 
-    bool gestorClientes::addCliente(const std::string& nome, const int& NIF, const std::string& email) {
+    void gestorClientes::addCliente(const std::string& nome, const int& NIF, const std::string& email) {
 
         if (nome.empty() || email.empty() || NIF < 100000000 || NIF > 999999999) {
             throw exceptions::DadosInvalidosException("Nome ou NIF Inválido");
         }
         cliente novo(nome, email, NIF);
         clientList.push_back(novo);
-        return true;
     }
 
-    bool gestorClientes::removeCliente(int NIF) {
+    void gestorClientes::removeCliente(int NIF) {
 
-        for (int i = 0; i <= clientList.size() - 1; i++) {
+        for (int i = 0; i <= clientList.size(); i++) {
             if (clientList[i].getNIF() == NIF) {
                 clientList.erase(clientList.begin() + i);
-                return true;
             }
         }
 

@@ -26,10 +26,10 @@ namespace loja::controller {
             gestor::gestorClientes gestorClientes;
             gestor::gestorVendas gestorVendas;
 
-            void menuPrincipal();
+
             void menuClientes();
-            void menuProdutos();
             void menuEmpregados();
+            void menuProdutos();
             void menuVendas();
 
             void criarCliente();
@@ -37,17 +37,17 @@ namespace loja::controller {
             void listagemClientes();
             void procurarCliente();
 
+            void criarEmpregado();
+            void removerEmpregado();
+            void listagemEmpregados();
+            void procurarEmpregado();
+
             void criarProduto();
             void removerProduto();
             void listagemProdutos();
             void procurarProduto();
             void setStockProduto();
             void setPrecoProduto();
-
-            void criarEmpregado();
-            void removerEmpregado();
-            void listagemEmpregados();
-            void procurarEmpregado();
 
             void criarVenda();
 
