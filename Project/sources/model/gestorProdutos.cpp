@@ -16,11 +16,15 @@ namespace loja::gestor {
         return nextID++;
     }
 
-    void gestor_produtos::addProduto(const std::string& nome, const std::string& plataforma) {
-        if (nome.empty() || plataforma.empty()) {
-            throw exceptions::DadosInvalidosException("Nome ou Plataforma Inválida");
+    void gestor_produtos::addProduto(const std::string& nome,
+                                    const std::string& plataforma,
+                                    float preco,
+                                    int stock) {
+
+        if (nome.empty() || plataforma.empty() || preco <= 0 || stock < 0) {
+            throw exceptions::DadosInvalidosException("Dados Inválidos");
         }
-        produto novo (nome, plataforma, gerarID(), 0 /*preço*/, 0 /*stock*/);
+        produto novo (nome, plataforma, gerarID(), preco, stock);
         gameList.push_back(novo);
     }
 
@@ -76,3 +80,4 @@ namespace loja::gestor {
         throw exceptions::DadosNaoEncontradosException("ID não encontrado");
     }
 }
+

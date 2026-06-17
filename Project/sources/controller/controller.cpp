@@ -263,3 +263,100 @@ void Controller::procurarEmpregado() {
         View::erro(e.what());
     }
 }
+
+void Controller::criarProduto() {
+
+    try {
+
+        std::string nome =
+            ProdutoView::pedirNomeProduto();
+
+        std::string plataforma =
+            ProdutoView::pedirPlataforma();
+
+        float preco =
+            ProdutoView::pedirPreco();
+
+        int stock =
+            ProdutoView::pedirStock();
+
+
+        gestorProdutos.addProduto(nome, plataforma, preco, stock);
+
+        View::sucesso("Produto criado");
+
+    }
+
+    catch (exceptions::LojaException& e) {
+        View::erro(e.what());
+    }
+}
+
+void Controller::removerProduto() {
+
+    try {
+
+        int ID = ProdutoView::pedirIDproduto();
+
+        gestorProdutos.removeProduto(ID);
+
+        View::sucesso("Produto removido");
+    }
+
+    catch (exceptions::LojaException& e) {
+        View::erro(e.what());
+    }
+}
+
+void Controller::listagemProdutos() {
+
+    ProdutoView::printProdutos(gestorProdutos.getProdutos());
+}
+
+void Controller::procurarProduto() {
+    try {
+
+        int ID = ProdutoView::pedirIDproduto();
+
+        produto* produtoEncontrado = gestorProdutos.procurarproduto(ID);
+        ProdutoView::detalhesProduto(*produtoEncontrado);
+
+    }
+    catch (exceptions::LojaException& e) {
+        View::erro(e.what());
+    }
+}
+
+void Controller::setStockProduto() {
+
+    try {
+
+        int ID =
+            ProdutoView::pedirIDproduto();
+
+        int stock =
+            ProdutoView::pedirStock();
+
+        gestorProdutos.setStock(ID, stock);
+    }
+    catch (exceptions::LojaException& e) {
+        View::erro(e.what());
+    }
+}
+
+void Controller::setPrecoProduto() {
+
+    try {
+
+        int ID =
+            ProdutoView::pedirIDproduto();
+
+        float preco =
+            ProdutoView::pedirPreco();
+
+        gestorProdutos.setStock(ID, preco);
+    }
+    catch (exceptions::LojaException& e) {
+        View::erro(e.what());
+    }
+}

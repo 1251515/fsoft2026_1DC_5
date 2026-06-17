@@ -107,13 +107,6 @@ int loja::view::EmpregadoView::pedirIDempregado() {
 
 void loja::view::EmpregadoView::detalhesEmpregado(const empregado& c) {
 
-    cout << left
-        << setw(30) << "Nome"
-        << setw(7) << "ID"
-        << endl;
-
-    cout << string(50, '-') << endl;
-
     std::cout << "Nome : " << c.getNome() << '\n';
     std::cout << "ID  : " << c.getID() << '\n';
 }

@@ -16,6 +16,12 @@ namespace loja::view {
 
             static std::string pedirNomeProduto();
             static std::string pedirPlataforma();
+            static int pedirIDproduto();
+            static int pedirStock();
+            static float pedirPreco();
+
+
+            static void detalhesProduto(const produto& c);
 
     };
 }
