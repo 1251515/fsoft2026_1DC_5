@@ -230,7 +230,10 @@ void Controller::procurarCliente() {
 void Controller::criarEmpregado() {
 
     try {
-
+        std::cin.ignore(
+       std::numeric_limits<std::streamsize>::max(),
+       '\n'
+    );
         std::string nome =
             EmpregadoView::pedirNomeEmpregado();
 
@@ -284,7 +287,10 @@ void Controller::procurarEmpregado() {
 void Controller::criarProduto() {
 
     try {
-
+        std::cin.ignore(
+             std::numeric_limits<std::streamsize>::max(),
+             '\n'
+          );
         std::string nome =
             ProdutoView::pedirNomeProduto();
 
@@ -371,7 +377,7 @@ void Controller::setPrecoProduto() {
         float preco =
             ProdutoView::pedirPreco();
 
-        gestorProdutos.setStock(ID, preco);
+        gestorProdutos.setPreco(ID, preco);
     }
     catch (exceptions::LojaException& e) {
         View::erro(e.what());
@@ -381,7 +387,10 @@ void Controller::setPrecoProduto() {
 void Controller::criarVenda() {
 
     try {
-
+        std::cin.ignore(
+             std::numeric_limits<std::streamsize>::max(),
+             '\n'
+          );
         int IDempregado =
             EmpregadoView::pedirIDempregado();
 
