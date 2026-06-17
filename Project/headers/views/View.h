@@ -4,9 +4,11 @@
 
 namespace loja::view {
 
-    class mainView {
+    class View {
 
         public:
             static int menuPrincipal();
+            static void erro (const std::string mensagem);
+            static void sucesso();
     };
 }

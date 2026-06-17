@@ -2,17 +2,17 @@
 
 #include <string>
 #include <vector>
+#include "../exceptions/Exceptions.h"
+#include "../views/View.h"
 #include "../model/gestorProdutos.h"
 #include "../views/ProdutoView.h"
 #include "../model/gestorClientes.h"
 #include "../views/ClienteView.h"
 #include "../model/gestorEmpregados.h"
 #include "../views/EmpregadoView.h"
-#include "../exceptions/Exceptions.h"
-#include "../model/ItemVenda.h"
-#include "../model/Venda.h"
+#include "../model/gestorVendas.h"
 #include "../views/VendaView.h"
-#include "../views/View.h"
+
 
 
 namespace loja::controller {
@@ -20,14 +20,41 @@ namespace loja::controller {
     class Controller {
 
         private:
+
             gestor::gestor_empregados gestorEmpregados;
             gestor::gestor_produtos gestorProdutos;
             gestor::gestorClientes gestorClientes;
+            gestor::gestorVendas gestorVendas;
 
+            void menuPrincipal();
+            void menuClientes();
+            void menuProdutos();
+            void menuEmpregados();
+            void menuVendas();
+
+            void criarCliente();
+            void removerCliente();
+            void listagemClientes();
+            void procurarCliente();
+
+            void criarProduto();
+            void removerProduto();
+            void listagemProdutos();
+            void procurarProduto();
+            void setStockProduto();
+            void setPrecoProduto();
+
+            void criarEmpregado();
+            void removerEmpregado();
+            void listagemEmpregados();
+            void procurarEmpregado();
+
+            void criarVenda();
 
         public:
-            static void erro (const std::string mensagem_erro);
-            static void sucesso();
+
+            Controller() = default;
+            void exec();
 
 
 

@@ -59,3 +59,22 @@ int loja::view::EmpregadoView::menuEmpregados() {
     return opcao;
 
 }
+
+string loja::view::EmpregadoView::pedirNomeEmpregado() {
+
+    string nomeEmpregado;
+
+    cout << "Nome do Empregado: ";
+
+    while (true) {
+
+        std::getline(std::cin, nomeEmpregado);
+
+        if (!nomeEmpregado.empty() && nomeEmpregado.find_first_not_of(' ') != std::string::npos /*carater invalido*/) {
+            return nomeEmpregado;
+        }
+
+        std::cout << "ERRO: Nome inválido.\n";
+        std::cout << "Nome do Empregado: ";
+    }
+}

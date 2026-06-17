@@ -1,18 +1,21 @@
+#pragma once
+
 #include "../../headers/views/VendaView.h"
 #include "../../headers/model/gestorProdutos.h"
 
 #include <string>
 #include <iostream>
+#include <iomanip>
 
 
 using namespace std;
+
 
 int loja::view::VendaView::menuVendas() {
 
     int opcao;
 
     cout << "1 - Criar Venda" << endl;
-    cout << "2 - Ver lista de Vendas" << endl;
     cout << endl;
     cout << "0 - Sair" << endl;
 
@@ -27,12 +30,12 @@ int loja::view::VendaView::menuVendas() {
             continue;
         }
 
-        if (opcao < 0 || opcao > 2) {
+        if (opcao < 0 || opcao > 1) {
             cout << "ERRO: Escolha uma opção válida";
             continue;
         }
 
-        if (opcao >= 0 && opcao <= 2) {
+        if (opcao >= 0 && opcao <= 1) {
             break;
         }
 

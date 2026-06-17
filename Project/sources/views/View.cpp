@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int menuPrincipal() {
+int loja::view::View::menuPrincipal() {
     int opcao;
 
     cout << "1 - Clientes" << endl;
@@ -37,5 +37,12 @@ int menuPrincipal() {
         }
 }
     return opcao;
+}
 
+void loja::view::View::erro(const std::string mensagem) {
+    cout << "\nERRO: " << mensagem << endl;
+}
+
+void loja::view::View::sucesso() {
+    cout << "\nSucesso!" << endl;
 }
