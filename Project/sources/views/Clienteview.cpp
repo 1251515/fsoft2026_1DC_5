@@ -111,7 +111,7 @@ string loja::view::clienteView::pedirEmail() {
 
     string email;
 
-    cout << "Nome do Cliente: ";
+    cout << "Email do Cliente: ";
 
     while (true) {
 
@@ -121,8 +121,8 @@ string loja::view::clienteView::pedirEmail() {
             return email;
         }
 
-        std::cout << "ERRO: Nome inválido.\n";
-        std::cout << "Nome do Cliente: ";
+        std::cout << "ERRO: Email inválido.\n";
+        std::cout << "Email do Cliente: ";
     }
 }
 
