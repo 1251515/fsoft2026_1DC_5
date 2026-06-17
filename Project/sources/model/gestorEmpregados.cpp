@@ -15,21 +15,20 @@ namespace loja::gestor {
         return nextID++;
     }
 
-    bool gestor_empregados::addEmpregado(const std::string& nome) {
+    void gestor_empregados::addEmpregado(const std::string& nome) {
         if (nome.empty()) {
             throw exceptions::DadosInvalidosException("Nome inválido");
         }
         empregado novo(nome, gerarID());
         listaEmpregados.push_back(novo);
-        return true;
     }
 
-    bool gestor_empregados::removeEmpregado(int ID) {
+    void gestor_empregados::removeEmpregado(int ID) {
 
         for (int i = 0; i <= listaEmpregados.size() - 1; i++) {
             if (listaEmpregados[i].getID() == ID) {
                 listaEmpregados.erase(listaEmpregados.begin() + i);
-                return true;
+                return;
             }
         }
 

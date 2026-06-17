@@ -208,3 +208,58 @@ void Controller::procurarCliente() {
         View::erro(e.what());
     }
 }
+
+
+void Controller::criarEmpregado() {
+
+    try {
+
+        std::string nome =
+            EmpregadoView::pedirNomeEmpregado();
+
+
+        gestorEmpregados.addEmpregado(nome);
+
+        View::sucesso("Empregado criado");
+
+    }
+
+    catch (exceptions::LojaException& e) {
+        View::erro(e.what());
+    }
+}
+
+void Controller::removerEmpregado() {
+
+    try {
+
+        int ID = EmpregadoView::pedirIDempregado();
+
+        gestorEmpregados.removeEmpregado(ID);
+
+        View::sucesso("Empregado removido");
+    }
+
+    catch (exceptions::LojaException& e) {
+        View::erro(e.what());
+    }
+}
+
+void Controller::listagemEmpregados() {
+
+    EmpregadoView::printEmpregados(gestorEmpregados.getEmpregados());
+}
+
+void Controller::procurarEmpregado() {
+    try {
+
+        int ID = EmpregadoView::pedirIDempregado();
+
+        empregado* empregadoEncontrado = gestorEmpregados.procurarEmpregado(ID);
+        EmpregadoView::detalhesEmpregado(*empregadoEncontrado);
+
+    }
+    catch (exceptions::LojaException& e) {
+        View::erro(e.what());
+    }
+}
