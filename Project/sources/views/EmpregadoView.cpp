@@ -16,7 +16,7 @@ void loja::view::EmpregadoView::printEmpregados(const std::vector<empregado>& li
 
     cout << string(50, '-') << endl;            //headline
 
-    for (int i = 0; i <= lista.size(); i++) {
+    for (int i = 0; i < lista.size(); i++) {
         cout << left
             << setw(30) << lista[i].getNome()
             << setw(9) << lista[i].getID()

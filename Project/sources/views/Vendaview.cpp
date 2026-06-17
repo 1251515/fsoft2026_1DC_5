@@ -16,6 +16,7 @@ int loja::view::VendaView::menuVendas() {
     int opcao;
 
     cout << "1 - Criar Venda" << endl;
+    cout << "2 - Ver Histórico de compras do cliente" << endl;
     cout << endl;
     cout << "0 - Sair" << endl;
 

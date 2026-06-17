@@ -18,7 +18,7 @@ void loja::view::clienteView::printClientes(const std::vector<cliente>& lista) {
 
     cout << string(80, '-') << endl;            //headline
 
-    for (int i = 0; i <= lista.size(); i++) {
+    for (int i = 0; i < lista.size(); i++) {
         cout << left
             << setw(30) << lista[i].getNome()
             << setw(9) << lista[i].getNIF()

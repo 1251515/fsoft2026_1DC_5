@@ -4,7 +4,7 @@
 #include "../../Mock/Mockdata.h"
 #include <iostream>
 #include <string>
-
+#include <limits>
 using namespace loja::controller;
 using namespace loja::view;
 void loja::controller::Controller::carregarMockdata() {
@@ -166,6 +166,10 @@ void Controller::menuVendas() {
 void Controller::criarCliente() {
 
     try {
+        std::cin.ignore(
+    std::numeric_limits<std::streamsize>::max(),
+    '\n'
+);
 
         std::string nome =
             clienteView::pedirNomeCliente();
