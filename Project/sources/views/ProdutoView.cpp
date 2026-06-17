@@ -84,7 +84,7 @@ string loja::view::ProdutoView::pedirNomeProduto () {
             }
 
         std::cout << "ERRO: Nome inválido.\n";
-        std::cout << "Nome: ";
+        std::cout << "Nome do produto: ";
     }
 }
 
