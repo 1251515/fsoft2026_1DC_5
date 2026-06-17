@@ -50,6 +50,7 @@ namespace loja::controller {
             void procurarEmpregado();
 
             void criarVenda();
+            void carregarMockdata();
 
         public:
 
