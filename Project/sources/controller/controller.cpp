@@ -1,14 +1,23 @@
 #pragma once
 
 #include "../../headers/controller/Controller.h"
+#include "../../Mock/Mockdata.h"
 #include <iostream>
 #include <string>
 
 using namespace loja::controller;
 using namespace loja::view;
+void loja::controller::Controller::carregarMockdata() {
 
+    Mock::load(
+        gestorClientes,
+        gestorEmpregados,
+        gestorProdutos,
+        gestorVendas
+    );
+}
 void Controller::exec() {
-
+    carregarMockdata();
     while (true) {
         switch (View::menuPrincipal()) {
 

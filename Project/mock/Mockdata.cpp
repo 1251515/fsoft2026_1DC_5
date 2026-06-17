@@ -9,8 +9,9 @@ void Mock::load(
     gestor::gestorVendas& vendas
 ) {
 
-    // Clientes
-
+    // ======================
+    // CLIENTES
+    // ======================
     clientes.addCliente(
         "Bruno Sousa",
         123456789,
@@ -29,28 +30,40 @@ void Mock::load(
         "carlos@email.pt"
     );
 
-    // Empregados
-
+    // ======================
+    // EMPREGADOS
+    // ======================
     empregados.addEmpregado("Joao");
     empregados.addEmpregado("Maria");
     empregados.addEmpregado("Pedro");
 
-    // Produtos
-
+    // ======================
+    // PRODUTOS (CORRIGIDO)
+    // agora com preco e stock
+    // ======================
     produtos.addProduto(
         "EA FC 26",
-        "PS5"
+        "PS5",
+        69.99f,
+        10
     );
 
     produtos.addProduto(
         "God of War Ragnarok",
-        "PC"
+        "PC",
+        59.99f,
+        15
     );
 
     produtos.addProduto(
         "Mario Kart World",
-        "Switch"
+        "Switch",
+        49.99f,
+        20
     );
 
-    // Não criar vendas por enquanto
+    // ======================
+    // VENDAS (opcional)
+    // ======================
+    // deixo vazio como tens no controller
 }
