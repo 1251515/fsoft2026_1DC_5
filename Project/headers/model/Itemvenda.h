@@ -1,7 +1,5 @@
 
 #pragma once
-#include "Venda.h"
-#include <string>
 
 namespace loja {
 
