@@ -13,11 +13,11 @@ namespace loja::gestor {
             static int nextID;
 
         public:
-            bool addProduto(const std::string& nome, const std::string& plataforma);
-            bool removeProduto(const int idProd);
+            void addProduto(const std::string& nome, const std::string& plataforma);
+            void removeProduto(const int idProd);
             static int gerarID();
-            void setStock(const int idProd, int stock);
-            void setPreco(const int idProd, int preco);
+            void setStock(const int idProd, int newstock);
+            void setPreco(const int idProd, int novopreco);
             std::vector<produto> getProdutos() const;
             produto* procurarproduto(int ID);
     };

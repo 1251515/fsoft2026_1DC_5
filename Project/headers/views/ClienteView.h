@@ -16,5 +16,7 @@ namespace loja::view {
             static std::string pedirNomeCliente();
             static int pedirNIF();
             static std::string pedirEmail();
+
+            static void detalhesCliente(const cliente& c);
     };
 }

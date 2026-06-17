@@ -13,8 +13,11 @@ namespace loja::gestor {
             std::vector<cliente> clientList;
 
         public:
-            bool addCliente (const std::string& nome, const int& NIF, const std::string& email);
-            bool removeCliente (int NIF);
+            void addCliente (const std::string& nome,
+                            const int& NIF,
+                            const std::string& email);
+
+            void removeCliente (int NIF);
             std::vector<cliente> getClientes () const;
             cliente* procurarcliente(int NIF);
     };

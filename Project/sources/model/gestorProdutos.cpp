@@ -16,49 +16,50 @@ namespace loja::gestor {
         return nextID++;
     }
 
-    bool gestor_produtos::addProduto(const std::string& nome, const std::string& plataforma) {
+    void gestor_produtos::addProduto(const std::string& nome, const std::string& plataforma) {
         if (nome.empty() || plataforma.empty()) {
             throw exceptions::DadosInvalidosException("Nome ou Plataforma Inválida");
         }
         produto novo (nome, plataforma, gerarID(), 0 /*preço*/, 0 /*stock*/);
         gameList.push_back(novo);
-        return true;
     }
 
     void gestor_produtos::setStock(const int idProd, int newstock) {
-        if (newstock >= 0) {
-            for (int i = 0; i < gameList.size() - 1; i++) {
-                if (gameList[i].getID() == idProd) {
-                    gameList[i].stock = newstock;
-                }
-            }
-
-            throw exceptions::DadosNaoEncontradosException("ID não encontrado");
+        if (newstock < 0) {
+            throw exceptions::DadosInvalidosException("Stock Inválido");
         }
-        throw exceptions::DadosInvalidosException("Stock Inválido");
+
+        for (int i = 0; i < gameList.size(); i++) {
+            if (gameList[i].getID() == idProd) {
+                gameList[i].stock = newstock;
+                return;
+            }
+        }
+
+        throw exceptions::DadosNaoEncontradosException("ID não encontrado");
     }
 
     void gestor_produtos::setPreco(const int idProd, int novopreco) {
-        if (novopreco > 0) {
-            for (int i = 0; i < gameList.size() - 1; i++) {
+        if (novopreco < 0) {
+            throw exceptions::DadosInvalidosException("Preço Inválido");
+        }
+            for (int i = 0; i < gameList.size(); i++) {
                 if (gameList[i].getID() == idProd) {
                     gameList[i].preco = novopreco;
+                    return;
                 }
             }
             throw exceptions::DadosNaoEncontradosException("ID não encontrado");
         }
-        throw exceptions::DadosInvalidosException("Preço Inválido");
-    }
 
 
-    bool gestor_produtos::removeProduto(const int idProd) {
+    void gestor_produtos::removeProduto(const int idProd) {
         for (int i = 0; i < gameList.size() - 1; i++) {
             if (gameList[i].getID() == idProd) {
                 gameList.erase(gameList.begin() + i);
-                return true;
+                return;
             }
         }
-
         throw exceptions::DadosNaoEncontradosException("ID não encontrado");
     }
 

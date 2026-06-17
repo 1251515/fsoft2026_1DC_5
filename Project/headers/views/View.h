@@ -9,6 +9,6 @@ namespace loja::view {
         public:
             static int menuPrincipal();
             static void erro (const std::string mensagem);
-            static void sucesso();
+            static void sucesso(const std::string mensagem);
     };
 }

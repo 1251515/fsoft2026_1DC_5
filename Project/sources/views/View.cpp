@@ -9,6 +9,14 @@ using namespace std;
 int loja::view::View::menuPrincipal() {
     int opcao;
 
+    std::cout << R"(
+
+====================================================
+                SISTEMA DE LOJA
+====================================================
+
+)" << std::endl;
+
     cout << "1 - Clientes" << endl;
     cout << "2 - Empregados" << endl;
     cout << "3 - Produtos" << endl;
@@ -43,6 +51,6 @@ void loja::view::View::erro(const std::string mensagem) {
     cout << "\nERRO: " << mensagem << endl;
 }
 
-void loja::view::View::sucesso() {
-    cout << "\nSucesso!" << endl;
+void loja::view::View::sucesso(const std::string mensagem) {
+    cout << "\n" << mensagem <<" com Sucesso!" << endl;
 }
