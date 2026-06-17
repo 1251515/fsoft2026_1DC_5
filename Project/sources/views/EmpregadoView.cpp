@@ -78,3 +78,42 @@ string loja::view::EmpregadoView::pedirNomeEmpregado() {
         std::cout << "Nome do Empregado: ";
     }
 }
+
+int loja::view::EmpregadoView::pedirIDempregado() {
+
+    int ID = 0;
+
+    cout << "ID do Empregado: ";
+
+    while (true) {
+
+        if (!(std::cin >> ID)) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            cout << "ERRO: ID Inválido. \n";
+            continue;
+        }
+
+        if (ID >= 4000000 && ID <= 4999999) {
+            return ID;
+        }
+
+        cout << "ERRO: ID Inválido. \n";
+        cout << "ID do Empregado: ";
+
+    }
+}
+
+
+void loja::view::EmpregadoView::detalhesEmpregado(const empregado& c) {
+
+    cout << left
+        << setw(30) << "Nome"
+        << setw(7) << "ID"
+        << endl;
+
+    cout << string(50, '-') << endl;
+
+    std::cout << "Nome : " << c.getNome() << '\n';
+    std::cout << "ID  : " << c.getID() << '\n';
+}

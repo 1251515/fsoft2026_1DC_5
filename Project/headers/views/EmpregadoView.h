@@ -15,6 +15,8 @@ namespace loja::view {
             static int menuEmpregados();
 
             static std::string pedirNomeEmpregado();
+            static int pedirIDempregado();
+            static void detalhesEmpregado(const empregado& c);
     };
 
 }
