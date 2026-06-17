@@ -20,8 +20,6 @@ namespace loja {
 
         bool concluida;
 
-        static int nextID;
-
     public:
 
         venda(const int idCliente,
@@ -32,7 +30,6 @@ namespace loja {
 
         int getClienteID() const;
 
-        static int gerarIDvenda();
         int getIDvenda() const;
 
         void adicionarItem(const itemVenda& item);

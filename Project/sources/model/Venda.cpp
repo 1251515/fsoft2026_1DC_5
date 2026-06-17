@@ -1,17 +1,14 @@
-//
-// Created by bruno on 15/06/2026.
-//
 #include "../../headers/model/Venda.h"
 #include "../../headers/model/Itemvenda.h"
 
 using namespace loja;
 
-int nextID = 7000000;
+
 
 venda::venda(int idCliente,
             int idEmpregado) {
 
-    this->idVenda = gerarIDvenda();
+    this->idVenda = getIDvenda();
     this->idCliente = idCliente;
     this->idEmpregado = idEmpregado;
 
@@ -38,9 +35,7 @@ void venda::setEstado(bool estado) {
     concluida = estado;
 }
 
-int venda::gerarIDvenda() {
-    return nextID++;
-}
+
 
 void venda::adicionarItem(const itemVenda& item) {
     produtos.push_back(item);

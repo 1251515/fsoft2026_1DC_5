@@ -12,7 +12,7 @@ int loja::view::VendaView::menuVendas() {
     int opcao;
 
     cout << "1 - Criar Venda" << endl;
-
+    cout << "2 - Ver lista de Vendas" << endl;
     cout << endl;
     cout << "0 - Sair" << endl;
 
@@ -27,12 +27,12 @@ int loja::view::VendaView::menuVendas() {
             continue;
         }
 
-        if (opcao < 0 || opcao > 1) {
+        if (opcao < 0 || opcao > 2) {
             cout << "ERRO: Escolha uma opção válida";
             continue;
         }
 
-        if (opcao >= 0 && opcao <= 1) {
+        if (opcao >= 0 && opcao <= 2) {
             break;
         }
 
