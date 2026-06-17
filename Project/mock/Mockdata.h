@@ -1,8 +1,22 @@
-//
-// Created by bruno on 16/06/2026.
-//
+#pragma once
 
-#ifndef FSOFT2026_1DC_5_MOCKDATA_H
-#define FSOFT2026_1DC_5_MOCKDATA_H
+#include "../Headers/Model/GestorClientes.h"
+#include "../Headers/Model/GestorEmpregados.h"
+#include "../Headers/Model/GestorProdutos.h"
+#include "../Headers/Model/GestorVendas.h"
+#include <string>
+#include <vector>
 
-#endif //FSOFT2026_1DC_5_MOCKDATA_H
+namespace loja {
+    class Mock {
+
+    public:
+
+        static void load(
+            gestor::gestorClientes& clientes,
+            gestor::gestor_empregados& empregados,
+            gestor::gestor_produtos& produtos,
+            gestor::gestorVendas& vendas
+        );
+    };
+};

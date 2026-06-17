@@ -50,6 +50,7 @@ namespace loja::controller {
             void setPrecoProduto();
 
             void criarVenda();
+            void carregarMockdata();
 
         public:
 
