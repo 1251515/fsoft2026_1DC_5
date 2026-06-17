@@ -21,9 +21,10 @@ namespace loja::gestor {
 
     void gestorClientes::removeCliente(int NIF) {
 
-        for (int i = 0; i <= clientList.size(); i++) {
+        for (int i = 0; i < clientList.size(); i++) {
             if (clientList[i].getNIF() == NIF) {
                 clientList.erase(clientList.begin() + i);
+                return;
             }
         }
 

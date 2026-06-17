@@ -58,7 +58,7 @@ void loja::view::ProdutoView::printProdutos (const std::vector<loja::produto>& l
 
     cout << string(60, '-') << endl;            //headline
 
-    for (int i = 0; i <= listaProdutos.size(); i++) {
+    for (int i = 0; i < listaProdutos.size(); i++) {
         cout << left
             << setw(30) << listaProdutos[i].getNome()
             << setw(10) << listaProdutos[i].getPlataforma()
