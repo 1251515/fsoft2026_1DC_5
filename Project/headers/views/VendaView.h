@@ -20,6 +20,8 @@ namespace loja::view {
         static bool adicionarMaisProdutos();
         static int pedirNIF();
         static TipoPagamento pedirTipoPagamento();
+        static void mostrarVendas(const std::vector<venda>& vendas);
+        const std::vector<itemVenda>& getVendas() const;
 
     };
 

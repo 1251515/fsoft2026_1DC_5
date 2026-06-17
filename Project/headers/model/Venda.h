@@ -43,6 +43,8 @@ namespace loja {
         void setPagamento(TipoPagamento tipo);
         void processarPagamento();
 
+        const std::vector<itemVenda>& getProdutos() const;
+
     };
 
 }

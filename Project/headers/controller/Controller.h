@@ -34,22 +34,23 @@ namespace loja::controller {
 
             void criarCliente();
             void removerCliente();
-            void listagemClientes();
+            void listagemClientes() const;
             void procurarCliente();
 
             void criarEmpregado();
             void removerEmpregado();
-            void listagemEmpregados();
+            void listagemEmpregados() const;
             void procurarEmpregado();
 
             void criarProduto();
             void removerProduto();
-            void listagemProdutos();
+            void listagemProdutos() const;
             void procurarProduto();
             void setStockProduto();
             void setPrecoProduto();
 
             void criarVenda();
+            void mostrarComprasCliente() const;
 
             void carregarMockdata();
 

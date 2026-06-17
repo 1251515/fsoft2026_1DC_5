@@ -141,6 +141,10 @@ void Controller::menuVendas() {
                 criarVenda();
                 break;
 
+            case 2:
+                mostrarComprasCliente();
+                break;
+
             case 0:
                 return;
 
@@ -190,7 +194,7 @@ void Controller::removerCliente() {
     }
 }
 
-void Controller::listagemClientes() {
+void Controller::listagemClientes() const {
 
     clienteView::printClientes(gestorClientes.getClientes());
 }
@@ -245,7 +249,7 @@ void Controller::removerEmpregado() {
     }
 }
 
-void Controller::listagemEmpregados() {
+void Controller::listagemEmpregados() const {
 
     EmpregadoView::printEmpregados(gestorEmpregados.getEmpregados());
 }
@@ -308,7 +312,7 @@ void Controller::removerProduto() {
     }
 }
 
-void Controller::listagemProdutos() {
+void Controller::listagemProdutos() const {
 
     ProdutoView::printProdutos(gestorProdutos.getProdutos());
 }
@@ -384,9 +388,6 @@ void Controller::criarVenda() {
             produto* produtoEncontrado =
                 gestorProdutos.procurarProdutoNome(nomeProduto, plataforma);
 
-            int IDproduto =
-                produtoEncontrado->getID();
-
 
             int quantidade =
                 VendaView::pedirQuantidade();
@@ -446,6 +447,25 @@ void Controller::criarVenda() {
         View::sucesso("Compra Efetuada");
     }
     catch (exceptions::LojaException& e) {
+        View::erro(e.what());
+    }
+}
+
+
+void Controller::mostrarComprasCliente() const {
+
+    try {
+
+        int nif =
+            clienteView::pedirNIF();
+
+        std::vector<venda> vendas =
+            gestorVendas.getVendasPorCliente(nif);
+
+        VendaView::mostrarVendas(vendas);
+    }
+    catch (const exceptions::LojaException& e) {
+
         View::erro(e.what());
     }
 }

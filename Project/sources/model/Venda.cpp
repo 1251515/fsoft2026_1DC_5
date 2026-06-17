@@ -88,3 +88,6 @@ void venda::setTotal(float preco) {
     this->subtotal = preco;
 }
 
+const std::vector<itemVenda>& venda::getProdutos() const {
+    return produtos;
+}

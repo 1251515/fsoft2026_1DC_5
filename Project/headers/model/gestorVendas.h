@@ -19,6 +19,7 @@ namespace loja::gestor {
             venda* procurarVenda(int idVenda);
             std::vector<venda> getVendas();
             static int gerarIDvenda();
+            std::vector<venda> getVendasPorCliente(int NIF) const;
 
     };
 }

@@ -28,4 +28,16 @@ namespace loja {
         throw exceptions::DadosNaoEncontradosException("ID não encontrado");
     }
 
+    int itemVenda::getIDProduto() const {
+        return idProduto;
+    }
+
+    int itemVenda::getQuantidade() const {
+        return quantidade;
+    }
+
+    float itemVenda::getPrecoUnitario() const {
+        return precoUnitario;
+    }
+
 }

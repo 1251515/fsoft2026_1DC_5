@@ -108,7 +108,7 @@ int loja::view::VendaView::pedirQuantidade() {
             continue;
         }
 
-        if (quantidade >= 1 && quantidade <= stock) {
+        if (quantidade >= 1) {
             return quantidade;
         }
 
@@ -200,7 +200,7 @@ loja::TipoPagamento loja::view::VendaView::pedirTipoPagamento() {
     }
 }
 
-int menuGestaoPagamento() {
+int loja::view::VendaView::menuGestaoPagamento() {
 
     std::cout << "1 - Aprovar pagamento\n";
     std::cout << "2 - Recusar pagamento\n";
@@ -231,4 +231,40 @@ int menuGestaoPagamento() {
     return opcao;
 
 }
+
+void loja::view::VendaView::mostrarVendas(const std::vector<venda>& vendas) {
+
+    for (int i = 0; i < vendas.size(); i++) {
+
+        std::cout << "\n";
+        std::cout << "Venda ID: "
+                  << vendas[i].getIDvenda()
+                  << "\n";
+
+        std::cout << "Cliente ID: "
+                  << vendas[i].getClienteID()
+                  << "\n";
+
+        std::cout << "Total: "
+                  << vendas[i].getTotal()
+                  << "€\n";
+
+        std::cout << "\nProdutos:\n";
+
+        const std::vector<itemVenda>& items =
+            vendas[i].getProdutos();
+
+        for (int j = 0; j < items.size(); j++) {
+
+            std::cout << "Produto ID: "
+                      << items[j].getIDProduto()
+                      << "Quant: "
+                      << items[j].getQuantidade()
+                      << "Subtotal: "
+                      << items[j].getSubtotal()
+                      << "€\n";
+        }
+    }
+}
+
 
